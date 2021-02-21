@@ -16,6 +16,7 @@ class UI:
         self.login_window.config(padx=60, pady=50, bg=BACKGROUND_COLOUR)
         self.master_username = StringVar()
         self.master_password = StringVar()
+        self.main_image = None
         self.init_login_window()
         self.login_window.mainloop()
 
@@ -49,6 +50,12 @@ class UI:
             messagebox.showerror(title='Empty field(s)?', message='Please don\'t leave any field(s) empty.')
 
     def create_main_window(self):
+        self.login_window.destroy()
         main_window = Tk()
         main_window.title('Password Manager')
-        self.login_window.destroy()
+        main_window.config(padx=50, pady=50, bg=BACKGROUND_COLOUR)
+        main_canvas = Canvas(width=600, height=600)
+        main_canvas.config(bg=BACKGROUND_COLOUR, highlightthickness=0)
+        self.main_image = PhotoImage(file='images/password-manager.png')
+        main_canvas.create_image(300, 300, image=self.main_image)
+        main_canvas.grid(row=0, column=0)
