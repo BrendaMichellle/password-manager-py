@@ -19,7 +19,7 @@
 
 This repo will consist of various implementations for a password manager, all of which will be implemented only using
 python.
-[For android (planned, not yet implemented) app we'll be using java]
+[For android app (planned, not yet implemented) we will be using java]
 
 ## Current implementations available:
 
@@ -45,11 +45,24 @@ How to run:
 * Inside your python env.
 
 Screenshots:
-![](screenshots/tkinter-gui/login_window.png)
-![](screenshots/tkinter-gui/main_app_window.png)
-![](screenshots/tkinter-gui/add_new_password_window.png)
-![](screenshots/tkinter-gui/list_passwords_window.png)
-![](screenshots/tkinter-gui/generate_password_window.png)
+
+<p align="center">
+    <a href="" alt="">
+        <img src="screenshots/tkinter-gui/login_window.png"/>
+    </a>
+    <a href="" alt="">
+        <img src="screenshots/tkinter-gui/main_app_window.png"/>
+    </a>
+    <a href="" alt="">
+        <img src="screenshots/tkinter-gui/add_new_password_window.png"/>
+    </a>
+    <a href="" alt="">
+        <img src="screenshots/tkinter-gui/list_passwords_window.png"/>
+    </a>
+    <a href="" alt="">
+        <img src="screenshots/tkinter-gui/generate_password_window.png"/>
+    </a>
+</p>
 
 To-Do:
 
