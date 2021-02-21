@@ -24,3 +24,15 @@ class DataManager:
         with open('data/passwords.csv', 'a') as f:
             f.write('\n')
         new_password_data.to_csv('data/passwords.csv', mode='a', header=False, index=False)
+
+    def get_all_passwords(self, tag):
+        password_data = pandas.read_csv('data/passwords.csv')
+        usernames = []
+        passwords = []
+        count = 0
+        for this_tuple in password_data.itertuples():
+            if str(this_tuple[1]) == str(tag):
+                count += 1
+                usernames.append(this_tuple[2])
+                passwords.append(this_tuple[3])
+        return count, usernames, passwords
