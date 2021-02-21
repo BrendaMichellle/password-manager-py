@@ -17,3 +17,10 @@ class DataManager:
             tag_list.append(str(tags).title())
         tag_list = list(set(tag_list))
         return tag_list
+
+    def add_new_password(self, tag, user, password):
+        data_to_add = [[tag, user, password]]
+        new_password_data = pandas.DataFrame(data=data_to_add)
+        with open('data/passwords.csv', 'a') as f:
+            f.write('\n')
+        new_password_data.to_csv('data/passwords.csv', mode='a', header=False, index=False)
