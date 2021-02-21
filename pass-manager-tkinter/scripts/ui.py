@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from scripts import data_manager
 from scripts import password_generator
+import pyperclip
 
 BACKGROUND_COLOUR = '#495664'
 FOREGROUND_COLOUR = '#f6f7d3'
@@ -29,6 +30,9 @@ class UI:
         self.add_new_tag = None
         self.add_new_username = None
         self.add_new_pass = None
+        self.select_tag = None
+        self.user_listbox = None
+        self.pass_listbox = None
         # Init login window objects
         self.init_login_window()
         self.login_window.mainloop()
@@ -75,12 +79,13 @@ class UI:
         main_canvas.grid(row=0, column=1)
         tags_label = Label(text='TAG:', bg=BACKGROUND_COLOUR, fg=FOREGROUND_COLOUR, pady=50)
         tags_label.grid(row=1, column=0)
-        select_tag = StringVar()
+        self.select_tag = StringVar()
         tags_list = self.data_manager_obj.get_saved_password_tags()
-        tags_option_menu = OptionMenu(self.main_window, select_tag, *tags_list)
-        select_tag.set(tags_list[0])
+        tags_option_menu = OptionMenu(self.main_window, self.select_tag, *tags_list)
+        self.select_tag.set(tags_list[0])
         tags_option_menu.grid(row=1, column=1)
-        search_btn = Button(text='Search', bg=BACKGROUND_COLOUR, fg=FOREGROUND_COLOUR, pady=10)
+        search_btn = Button(text='Search', bg=BACKGROUND_COLOUR, fg=FOREGROUND_COLOUR, pady=10,
+                            command=self.list_passwords_clicked)
         search_btn.grid(row=1, column=3)
         add_btn = Button(text='Add a new entry', bg=BACKGROUND_COLOUR, fg=FOREGROUND_COLOUR, pady=10,
                          command=self.add_new_password_clicked)
@@ -88,6 +93,41 @@ class UI:
         gen_pass_btn = Button(text='Generate Password', bg=BACKGROUND_COLOUR, fg=FOREGROUND_COLOUR, pady=10,
                               command=self.generate_password_clicked)
         gen_pass_btn.grid(row=2, column=1)
+
+    def list_passwords_clicked(self):
+        self.create_list_pass_window(master=self.main_window)
+
+    def create_list_pass_window(self, master):
+        list_pass_window = Toplevel(master=master)
+        tag_choice = str(self.select_tag.get()).lower()
+        list_pass_window.title(f'List of passwords for {tag_choice}')
+        list_pass_window.config(padx=50, pady=50, bg=BACKGROUND_COLOUR)
+        intruct_label = Label(master=list_pass_window, text='Click on item to copy', bg=BACKGROUND_COLOUR,
+                              fg=FOREGROUND_COLOUR, pady=10)
+        intruct_label.grid(row=0, column=0)
+        count, user_list, pass_list = self.data_manager_obj.get_all_passwords(tag_choice)
+        self.user_listbox = Listbox(master=list_pass_window, height=count)
+        for i in range(0, count):
+            self.user_listbox.insert(i, user_list[i])
+        self.user_listbox.grid(row=1, column=0)
+        self.pass_listbox = Listbox(master=list_pass_window, height=count)
+        for i in range(0, count):
+            self.pass_listbox.insert(i, pass_list[i])
+        self.pass_listbox.grid(row=1, column=1)
+        self.user_listbox.bind("<<ListboxSelect>>", self.user_listbox_used)
+        self.pass_listbox.bind("<<ListboxSelect>>", self.pass_listbox_used)
+
+    def user_listbox_used(self, event):
+        if self.user_listbox.curselection():
+            pyperclip.copy(self.user_listbox.get(self.user_listbox.curselection()))
+            messagebox.showinfo(title='Copied',
+                                message='Copied this item!')
+
+    def pass_listbox_used(self, event):
+        if self.pass_listbox.curselection():
+            pyperclip.copy(self.pass_listbox.get(self.pass_listbox.curselection()))
+            messagebox.showinfo(title='Copied',
+                                message='Copied this item!')
 
     def generate_password_clicked(self):
         self.create_gen_pass_window(master=self.main_window)
@@ -123,7 +163,7 @@ class UI:
                             message=f'Password is copied to clipboard! \nYour password is: {password}')
 
     def add_new_password_clicked(self):
-        self.create_add_new_password_window(self.main_window)
+        self.create_add_new_password_window(master=self.main_window)
 
     def create_add_new_password_window(self, master):
         add_new_pass_window = Toplevel(master=master)
