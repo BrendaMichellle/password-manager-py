@@ -1,3 +1,9 @@
+![License](https://img.shields.io/github/license/SamDev98/password-manager-py?style=flat-square)
+![Release](https://img.shields.io/github/v/release/SamDev98/password-manager-py?include_prereleases&style=flat-square)
+![Downloads](https://img.shields.io/github/downloads/SamDev98/password-manager-py/total?style=flat-square)
+![Discord](https://img.shields.io/discord/813065529639436328?style=flat-square)
+![Maintained](https://img.shields.io/maintenance/yes/2021?style=flat-square)
+
 # 🐍 Python Password Manager 🔐
 
 ### An extensive password manager built using Python ✨
