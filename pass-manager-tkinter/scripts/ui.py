@@ -12,7 +12,7 @@ class UI:
 
     def __init__(self):
         # Init objects
-        self.data_manager = data_manager.DataManager()
+        self.data_manager_obj = data_manager.DataManager()
         # Create login window
         self.login_window = Tk()
         self.login_window.title('Login to Password Manager')
@@ -42,7 +42,7 @@ class UI:
         pass_label.grid(row=1, column=0)
         pass_entry = Entry(width=30, textvariable=self.master_password, show='*')
         pass_entry.grid(row=1, column=1)
-        go_btn = Button(text='Go', bg=BACKGROUND_COLOUR, fg=FOREGROUND_COLOUR, command=self.login_pressed)
+        go_btn = Button(text='Go', bg=BACKGROUND_COLOUR, fg=FOREGROUND_COLOUR, command=self.login_pressed, pady=10)
         go_btn.grid(row=2, column=2)
         user_entry.focus()
 
@@ -52,7 +52,7 @@ class UI:
         if username and password:
             self.master_username.set('')
             self.master_password.set('')
-            check_username, check_password = self.data_manager.get_master_details()
+            check_username, check_password = self.data_manager_obj.get_master_details()
             if str(check_username) == str(username):
                 if str(check_password) == str(password):
                     self.create_main_window()
@@ -76,7 +76,7 @@ class UI:
         tags_label = Label(text='TAG:', bg=BACKGROUND_COLOUR, fg=FOREGROUND_COLOUR, pady=50)
         tags_label.grid(row=1, column=0)
         select_tag = StringVar()
-        tags_list = self.data_manager.get_saved_password_tags()
+        tags_list = self.data_manager_obj.get_saved_password_tags()
         tags_option_menu = OptionMenu(self.main_window, select_tag, *tags_list)
         select_tag.set(tags_list[0])
         tags_option_menu.grid(row=1, column=1)
@@ -109,7 +109,7 @@ class UI:
         numbers_check.config(bg=BACKGROUND_COLOUR, highlightthickness=0)
         numbers_check.grid(row=2, column=0)
         go_btn = Button(master=generate_pass_window, text='Go', bg=BACKGROUND_COLOUR, fg=FOREGROUND_COLOUR,
-                        command=self.generate_password)
+                        command=self.generate_password, pady=10)
         go_btn.grid(row=3, column=1)
 
     def generate_password(self):
@@ -146,3 +146,29 @@ class UI:
         self.add_new_pass = StringVar()
         pass_entry = Entry(master=add_new_pass_window, width=30, textvariable=self.add_new_pass)
         pass_entry.grid(row=2, column=1)
+        add_pass_btn = Button(master=add_new_pass_window, text='Add this password', bg=BACKGROUND_COLOUR,
+                              fg=FOREGROUND_COLOUR, pady=10, command=self.password_add_clicked)
+        add_pass_btn.grid(row=3, column=1)
+
+    def password_add_clicked(self):
+        tag_value = str(self.add_new_tag.get())
+        user_value = str(self.add_new_username.get())
+        pass_value = str(self.add_new_pass.get())
+        if tag_value and user_value and pass_value:
+            tag_value = tag_value.lower()
+            is_okay = messagebox.askokcancel(title='Confirm save?',
+                                             message=f'Are you sure you want to proceed with this info?\n' +
+                                                     f'Tag: {tag_value}\n' +
+                                                     f'Username: {user_value}\n' +
+                                                     f'Password: {pass_value}')
+            if is_okay:
+                self.data_manager_obj.add_new_password(tag=tag_value, user=user_value, password=pass_value)
+                messagebox.showinfo(title='Success!',
+                                    message='The save operation was successful!')
+                self.add_new_tag.set('')
+                self.add_new_username.set('')
+                self.add_new_pass.set('')
+        else:
+            self.add_new_tag.set('')
+            self.add_new_username.set('')
+            self.add_new_pass.set('')
