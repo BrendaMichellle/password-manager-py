@@ -8,12 +8,23 @@ python.
 
 ## Current implementations available:
 1. [Tkinter-based](pass-manager-tkinter) GUI Application.
-Documentation [here](#tkinter-based-gui)
+Documentation [here.](#tkinter-based-gui)
 
 ## Planned implementations:
 1. Web App using Django.
 2. Android App.
 
-### Documentations:
+## Documentations:
 
-#### Tkinter-based-gui:
+### Tkinter-based-gui:
+Pre-requisites:
+* Python 3.
+* Requirements [here.](pass-manager-tkinter/requirements.txt)
+
+How to run:
+* Simply run command `python3 launcher.py`.
+* Inside your python env.
+
+To-Do:
+* Add file encryption.
+* Add cloud-based backups.
