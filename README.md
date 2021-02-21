@@ -22,24 +22,36 @@ python.
 [For android (planned, not yet implemented) app we'll be using java]
 
 ## Current implementations available:
-1. [Tkinter-based](pass-manager-tkinter) GUI Application.
-Documentation [here.](#tkinter-based-gui)
+
+1. [Tkinter-based](pass-manager-tkinter) GUI Application. Documentation [here.](#tkinter-based-gui)
 
 ## Planned implementations:
+
 1. Web App using Django.
 2. Android App.
 
 ## Documentations:
 
 ### Tkinter-based-gui:
+
 Pre-requisites:
+
 * Python 3.
 * Requirements [here.](pass-manager-tkinter/requirements.txt)
 
 How to run:
+
 * Simply run command `python3 launcher.py`.
 * Inside your python env.
 
+Screenshots:
+![](screenshots/tkinter-gui/login_window.png)
+![](screenshots/tkinter-gui/main_app_window.png)
+![](screenshots/tkinter-gui/add_new_password_window.png)
+![](screenshots/tkinter-gui/list_passwords_window.png)
+![](screenshots/tkinter-gui/generate_password_window.png)
+
 To-Do:
+
 * Add file encryption.
 * Add cloud-based backups.
