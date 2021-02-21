@@ -15,7 +15,7 @@
 
 # 🐍 Python Password Manager 🔐
 
-### An extensive password manager built using Python ✨
+## An extensive password manager built using Python ✨
 
 This repo will consist of various implementations for a password manager, all of which will be implemented only using
 python.
