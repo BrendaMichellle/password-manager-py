@@ -1,8 +1,17 @@
-![License](https://img.shields.io/github/license/SamDev98/password-manager-py?style=flat-square)
-![Release](https://img.shields.io/github/v/release/SamDev98/password-manager-py?include_prereleases&style=flat-square)
-![Downloads](https://img.shields.io/github/downloads/SamDev98/password-manager-py/total?style=flat-square)
-![Discord](https://img.shields.io/discord/813065529639436328?style=flat-square)
-![Maintained](https://img.shields.io/maintenance/yes/2021?style=flat-square)
+<p align="centre">
+    <a href="" alt="License">
+        <img src="https://img.shields.io/github/license/SamDev98/password-manager-py?style=flat-square"/>
+    </a>
+    <a href="https://github.com/SamDev98/password-manager-py/releases" alt="Releases">
+        <img src="https://img.shields.io/github/v/release/SamDev98/password-manager-py?include_prereleases&style=flat-square"/>
+    </a>
+    <a href="https://discord.gg/7sSs4AC3ey" alt="Discord">
+        <img src="https://img.shields.io/discord/813065529639436328?style=flat-square"/>
+    </a>
+    <a href="" alt="Maintained">
+        <img src="https://img.shields.io/maintenance/yes/2021?style=flat-square"/>
+    </a>
+</p>
 
 # 🐍 Python Password Manager 🔐
 
