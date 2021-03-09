@@ -1,4 +1,4 @@
-<p align="centre">
+<p>
     <a href="" alt="License">
         <img src="https://img.shields.io/github/license/SamDev98/password-manager-py?style=flat-square"/>
     </a>
@@ -19,52 +19,54 @@
 
 This repo will consist of various implementations for a password manager, all of which will be implemented only using
 python.
-[For android app (planned, not yet implemented) we will be using java]
 
-## Current implementations available:
+### Current implementations available:
 
 1. [Tkinter-based](pass-manager-tkinter) GUI Application. Documentation [here.](#tkinter-based-gui)
 
-## Planned implementations:
+### Planned implementations:
 
 1. Web App using Django.
 2. Android App.
 
-## Documentations:
+### Documentations:
 
-### Tkinter-based-gui:
+#### Tkinter-based-gui:
 
-Pre-requisites:
+* Pre-requisites:
 
-* Python 3.
-* Requirements [here.](pass-manager-tkinter/requirements.txt)
+    1. Install Python 3.
+    2. Install the requirements ([you'll find them here](pass-manager-tkinter/requirements.txt)) into a virtual python
+       environment.
+        - Instructions on how to create one and install the requirements can be
+          found [here](https://docs.python.org/3/tutorial/venv.html)
+    3. Clone the repo. [Optional] Use the release branch for Beta features!
 
-How to run:
+* How to run:
 
-* Simply run command `python3 launcher.py`.
-* Inside your python env.
+    1. Activate the venv for your session:
 
-Screenshots:
+        - Windows: \path\to\venv\Scripts\activate.bat
+        - Unix or MacOS: source /path/to/venv/bin/activate
+
+    2. Now, simply run the command `python3 launcher.py`.
+
+* Screenshots:
 
 <p align="center">
     <a href="" alt="">
-        <img src="screenshots/tkinter-gui/login_window.png"/>
+        <img src="screenshots/tkinter-gui/login_window.png" width="300" height="250"/>
     </a>
     <a href="" alt="">
-        <img src="screenshots/tkinter-gui/main_app_window.png"/>
+        <img src="screenshots/tkinter-gui/main_app_window.png" width="300" height="250"/>
     </a>
     <a href="" alt="">
-        <img src="screenshots/tkinter-gui/add_new_password_window.png"/>
+        <img src="screenshots/tkinter-gui/add_new_password_window.png" width="300" height="250"/>
     </a>
     <a href="" alt="">
-        <img src="screenshots/tkinter-gui/list_passwords_window.png"/>
+        <img src="screenshots/tkinter-gui/list_passwords_window.png" width="300" height="250"/>
     </a>
     <a href="" alt="">
-        <img src="screenshots/tkinter-gui/generate_password_window.png"/>
+        <img src="screenshots/tkinter-gui/generate_password_window.png" width="300" height="250"/>
     </a>
 </p>
-
-To-Do:
-
-* Add file encryption.
-* Add cloud-based backups.
