@@ -27,6 +27,7 @@ class UI:
         self.symbols_checked = None
         self.letters_checked = None
         self.numbers_checked = None
+        self.spinbox_pass_length = None
         self.add_new_tag = None
         self.add_new_username = None
         self.add_new_pass = None
@@ -148,17 +149,21 @@ class UI:
         numbers_check = Checkbutton(master=generate_pass_window, text='Numbers', variable=self.numbers_checked, pady=10)
         numbers_check.config(bg=BACKGROUND_COLOUR, highlightthickness=0)
         numbers_check.grid(row=2, column=0)
+        self.spinbox_pass_length = Spinbox(master=generate_pass_window, from_=8, to=128, width=5)
+        self.spinbox_pass_length.grid(row=3, column=0)
         go_btn = Button(master=generate_pass_window, text='Go', bg=BACKGROUND_COLOUR, fg=FOREGROUND_COLOUR,
                         command=self.generate_password, pady=10)
-        go_btn.grid(row=3, column=1)
+        go_btn.grid(row=4, column=1)
 
     def generate_password(self):
         symbols = self.symbols_checked.get()
         letters = self.letters_checked.get()
         numbers = self.numbers_checked.get()
+        pass_length = self.spinbox_pass_length.get()
         password = password_generator.generate_password(has_symbols=bool(symbols),
                                                         has_letters=bool(letters),
-                                                        has_numbers=bool(numbers))
+                                                        has_numbers=bool(numbers),
+                                                        pass_length=int(pass_length))
         messagebox.showinfo(title='Password Generated!',
                             message=f'Password is copied to clipboard! \nYour password is: {password}')
 
