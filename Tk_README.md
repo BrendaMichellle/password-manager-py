@@ -16,6 +16,11 @@
     - Unix or MacOS: source /path/to/venv/bin/activate
 2. Now, simply run the command: `python3 launcher.py`. Find this file [here.](pass-manager-tkinter/launcher.py)
 
+### How to use:
+
+1. The default username and password is: admin, admin.
+2. This can be changed [here.](pass-manager-tkinter/data/master.csv)
+
 ### Screenshots:
 
 | Screen                  | Image                                                                                              |
