@@ -1,4 +1,5 @@
 import pandas
+import os
 
 
 class DataManager:
@@ -7,8 +8,14 @@ class DataManager:
         pass
 
     def get_master_details(self):
-        master_data = pandas.read_csv('data/master.csv')
-        return master_data.username[0], master_data.password[0]
+        if 'PY_PASS_MGR_USER' in os.environ and 'PY_PASS_MGR_PASS' in os.environ:
+            username = os.environ.get('PY_PASS_MGR_USER')
+            password = os.environ.get('PY_PASS_MGR_PASS')
+        else:
+            master_data = pandas.read_csv('data/master.csv')
+            username = master_data.username[0]
+            password = master_data.password[0]
+        return username, password
 
     def get_saved_password_tags(self):
         password_data = pandas.read_csv('data/passwords.csv')
