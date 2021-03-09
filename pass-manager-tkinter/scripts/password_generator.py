@@ -1,8 +1,6 @@
 import random
 import pyperclip
 
-LENGTH = 20
-
 NUMBERS = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 LETTERS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w',
            'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'M', 'N', 'O', 'p', 'Q', 'R', 'S', 'T',
@@ -13,7 +11,7 @@ ALL_CHARS = {'NUMBERS': NUMBERS,
              'SYMBOLS': SYMBOLS}
 
 
-def generate_password(has_symbols, has_letters, has_numbers):
+def generate_password(has_symbols, has_letters, has_numbers, pass_length):
     password = ''
     my_list = []
     if has_symbols:
@@ -22,7 +20,7 @@ def generate_password(has_symbols, has_letters, has_numbers):
         my_list.append('LETTERS')
     if has_numbers:
         my_list.append('NUMBERS')
-    for i in range(0, LENGTH):
+    for i in range(0, pass_length):
         which_char = random.choice(my_list)
         that_list = ALL_CHARS[which_char]
         char_to_add = random.choice(that_list)
