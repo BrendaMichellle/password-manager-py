@@ -53,20 +53,10 @@ python.
 
 * Screenshots:
 
-<p align="center">
-    <a href="" alt="">
-        <img src="screenshots/tkinter-gui/login_window.png" width="300" height="250"/>
-    </a>
-    <a href="" alt="">
-        <img src="screenshots/tkinter-gui/main_app_window.png" width="300" height="250"/>
-    </a>
-    <a href="" alt="">
-        <img src="screenshots/tkinter-gui/add_new_password_window.png" width="300" height="250"/>
-    </a>
-    <a href="" alt="">
-        <img src="screenshots/tkinter-gui/list_passwords_window.png" width="300" height="250"/>
-    </a>
-    <a href="" alt="">
-        <img src="screenshots/tkinter-gui/generate_password_window.png" width="300" height="250"/>
-    </a>
-</p>
+  | Screen                  | Image                                                                                              |
+    |-------------------------|----------------------------------------------------------------------------------------------------|
+  | Login Screen            | ![Login Screen](screenshots/tkinter-gui/login_window.png "Login Screen")                           |
+  | Main Application Screen | ![Main App Screen](screenshots/tkinter-gui/main_app_window.png "Main App Screen")                  |
+  | Add a new password      | ![Add a new password](screenshots/tkinter-gui/add_new_password_window.png "Add a new password")    |
+  | List saved passwords    | ![List saved passwords](screenshots/tkinter-gui/list_passwords_window.png "List saved passwords")  |
+  | Generate a new password | ![Generate a password](screenshots/tkinter-gui/generate_password_window.png "Generate a password") |
