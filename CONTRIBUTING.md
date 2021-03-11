@@ -9,7 +9,7 @@ Please note we have a code of conduct, please follow it in all your interactions
 
 1. Ensure all new requirements are added to requirements.txt in the respective project directories.
 2. Update the [README.md](README.md) with details of changes to the application.
-3. You may merge the Pull Request in once you have the sign-off of the code-owner.
+3. Once a pull request is approved by the code owners, a maintainer will merge it.
 
 ## Setup For Development:
 
