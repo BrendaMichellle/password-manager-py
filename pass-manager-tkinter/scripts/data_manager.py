@@ -13,11 +13,6 @@ class DataManager:
             master_data = master_file.read()
         with open('data/passwords.csv', 'r+') as pass_file:
             pass_data = pass_file.read()
-        print(not pass_data)
-        print(not master_data)
-        print('PY_PASS_MGR_USER' not in os.environ and 'PY_PASS_MGR_PASS' not in os.environ)
-        print(not pass_data or (
-                not master_data or ('PY_PASS_MGR_USER' not in os.environ and 'PY_PASS_MGR_PASS' not in os.environ)))
         if not pass_data and (
                 not master_data or ('PY_PASS_MGR_USER' not in os.environ and 'PY_PASS_MGR_PASS' not in os.environ)):
             return True
