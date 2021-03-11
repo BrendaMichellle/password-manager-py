@@ -5,9 +5,10 @@
 1. Install Python 3.
 2. Install the requirements ([you can find them here](pass-manager-tkinter/requirements.txt)) into a virtual python
    environment.
-    - Instructions on how to create one and install the requirements can be
-      found [here](https://docs.python.org/3/tutorial/venv.html)
-3. Clone the repo. [Optional] Use the release branch for Beta features!
+    - Instructions on how to create one and install the requirements can be found in
+      the [official documentation](https://docs.python.org/3/tutorial/venv.html), Or
+    - Refer to this [quick guide](guides/venv.md) specifically made for this repo.
+3. Clone the repo. (Optional: Use the release branch for Beta features!)
 4. Optional (but recommended): Set 2 environment variables on your system:
     - PY_PASS_MGR_USER: This will be the master username for the application.
     - PY_PASS_MGR_PASS: This will be the master password for the application.
@@ -21,7 +22,8 @@
 
 ### How to use:
 
-1. The app auto-detects the first-run so it will ask for a new master username and password if they aren't present already.
+1. The app auto-detects the first-run so it will ask for a new master username and password if they aren't present
+   already.
 2. If username and password are found in the env then this will be skipped.
 
 ### Screenshots:
