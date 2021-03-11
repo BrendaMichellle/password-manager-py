@@ -32,6 +32,7 @@ class UI:
         self.add_new_username = None
         self.add_new_pass = None
         self.select_tag = None
+        self.tags_option_menu = None
         self.user_listbox = None
         self.pass_listbox = None
         # Init login window objects
@@ -82,9 +83,9 @@ class UI:
         tags_label.grid(row=1, column=0)
         self.select_tag = StringVar()
         tags_list = self.data_manager_obj.get_saved_password_tags()
-        tags_option_menu = OptionMenu(self.main_window, self.select_tag, *tags_list)
+        self.tags_option_menu = OptionMenu(self.main_window, self.select_tag, *tags_list)
         self.select_tag.set(tags_list[0])
-        tags_option_menu.grid(row=1, column=1)
+        self.tags_option_menu.grid(row=1, column=1)
         search_btn = Button(text='Search', bg=BACKGROUND_COLOUR, fg=FOREGROUND_COLOUR, pady=10,
                             command=self.list_passwords_clicked)
         search_btn.grid(row=1, column=3)
@@ -210,6 +211,11 @@ class UI:
                 self.data_manager_obj.add_new_password(tag=tag_value, user=user_value, password=pass_value)
                 messagebox.showinfo(title='Success!',
                                     message='The save operation was successful!')
+                # Refresh tags list in the main app screen
+                self.tags_option_menu['menu'].delete(0, "end")
+                for string in self.data_manager_obj.get_saved_password_tags():
+                    self.tags_option_menu['menu'].add_command(label=string,
+                                                              command=lambda value=string: self.select_tag.set(value))
                 self.add_new_tag.set('')
                 self.add_new_username.set('')
                 self.add_new_pass.set('')
