@@ -14,30 +14,34 @@ class UI:
     def __init__(self):
         # Init objects
         self.data_manager_obj = data_manager.DataManager()
-        # Create login window
-        self.login_window = Tk()
-        self.login_window.title('Login to Password Manager')
-        self.login_window.config(padx=60, pady=50, bg=BACKGROUND_COLOUR)
-        # Master user credentials
-        self.master_username = StringVar()
-        self.master_password = StringVar()
-        # Init other variables required
-        self.main_window = None
-        self.main_image = None
-        self.symbols_checked = None
-        self.letters_checked = None
-        self.numbers_checked = None
-        self.spinbox_pass_length = None
-        self.add_new_tag = None
-        self.add_new_username = None
-        self.add_new_pass = None
-        self.select_tag = None
-        self.tags_option_menu = None
-        self.user_listbox = None
-        self.pass_listbox = None
-        # Init login window objects
-        self.init_login_window()
-        self.login_window.mainloop()
+        # Setup files if first start
+        if self.data_manager_obj.is_first_start():
+            self.data_manager_obj.setup_obj.run_setup()
+        # Create login window if not first start
+        if not self.data_manager_obj.is_first_start():
+            self.login_window = Tk()
+            self.login_window.title('Login to Password Manager')
+            self.login_window.config(padx=60, pady=50, bg=BACKGROUND_COLOUR)
+            # Master user credentials
+            self.master_username = StringVar()
+            self.master_password = StringVar()
+            # Init other variables required
+            self.main_window = None
+            self.main_image = None
+            self.symbols_checked = None
+            self.letters_checked = None
+            self.numbers_checked = None
+            self.spinbox_pass_length = None
+            self.add_new_tag = None
+            self.add_new_username = None
+            self.add_new_pass = None
+            self.select_tag = None
+            self.tags_option_menu = None
+            self.user_listbox = None
+            self.pass_listbox = None
+            # Init login window objects
+            self.init_login_window()
+            self.login_window.mainloop()
 
     def init_login_window(self):
         user_label = Label(text='Username: ', bg=BACKGROUND_COLOUR, fg=FOREGROUND_COLOUR, pady=20)

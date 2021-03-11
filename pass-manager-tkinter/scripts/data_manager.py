@@ -1,11 +1,28 @@
 import pandas
 import os
+from scripts.setup_script import Setup
 
 
 class DataManager:
 
     def __init__(self):
-        pass
+        self.setup_obj = Setup()
+
+    def is_first_start(self):
+        with open('data/master.csv', 'r+') as master_file:
+            master_data = master_file.read()
+        with open('data/passwords.csv', 'r+') as pass_file:
+            pass_data = pass_file.read()
+        print(not pass_data)
+        print(not master_data)
+        print('PY_PASS_MGR_USER' not in os.environ and 'PY_PASS_MGR_PASS' not in os.environ)
+        print(not pass_data or (
+                not master_data or ('PY_PASS_MGR_USER' not in os.environ and 'PY_PASS_MGR_PASS' not in os.environ)))
+        if not pass_data and (
+                not master_data or ('PY_PASS_MGR_USER' not in os.environ and 'PY_PASS_MGR_PASS' not in os.environ)):
+            return True
+        else:
+            return False
 
     def get_master_details(self):
         if 'PY_PASS_MGR_USER' in os.environ and 'PY_PASS_MGR_PASS' in os.environ:
