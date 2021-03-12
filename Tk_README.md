@@ -18,7 +18,8 @@
 1. Activate the venv for your session:
     - Windows: \path\to\venv\Scripts\activate.bat
     - Unix or MacOS: source /path/to/venv/bin/activate
-2. Now, simply run the command: `python3 launcher.py`. Find this file [here.](pass-manager-tkinter/launcher.py)
+2. Now, inside the `pass-manager-tkinter` directory, simply run the command: `python3 launcher.py`. Find this
+   file [here.](pass-manager-tkinter/launcher.py)
 
 ### How to use:
 
