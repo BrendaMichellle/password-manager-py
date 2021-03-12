@@ -8,7 +8,7 @@
     - Instructions on how to create one and install the requirements can be found in
       the [official documentation](https://docs.python.org/3/tutorial/venv.html), Or
     - Refer to this [quick guide](guides/venv.md) specifically made for this repo.
-3. Clone the repo. (Optional: Use the release branch for Beta features!)
+3. Clone the repo. (Optional: Use the `dev` branch for Beta features!)
 4. Optional (but recommended): Set 2 environment variables on your system:
     - PY_PASS_MGR_USER: This will be the master username for the application.
     - PY_PASS_MGR_PASS: This will be the master password for the application.
