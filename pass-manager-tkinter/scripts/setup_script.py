@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import os
+from cryptography.fernet import Fernet
 
 BACKGROUND_COLOUR = '#495664'
 FOREGROUND_COLOUR = '#f6f7d3'
@@ -12,8 +13,46 @@ class Setup:
         self.setup_screen = None
         self.master_username_var = None
         self.master_password_var = None
+        self.key = None
+
+    def make_key(self):
+        self.key = Fernet.generate_key()
+        with open('data/key.key', 'wb') as key_file:
+            key_file.write(self.key)
+
+    def get_key(self):
+        with open('data/key.key', 'rb') as key_file:
+            self.key = key_file.read()
+
+    def write_data_to_file(self, filename, data_to_put: str):
+        self.get_key()
+        filename = 'data/' + filename
+        fernet_obj = Fernet(self.key)
+        encrypted_data = fernet_obj.encrypt(data_to_put.encode())
+        with open(filename, 'wb') as encrypted_file:
+            encrypted_file.write(encrypted_data)
+
+    def append_data_to_file(self, filename, data_to_append: str):
+        self.get_key()
+        fernet_obj = Fernet(self.key)
+        existing_data = self.get_data_from_file(filename=filename)
+        filename = 'data/' + filename
+        new_data = existing_data + data_to_append
+        encrypted_data = fernet_obj.encrypt(new_data.encode())
+        with open(filename, 'wb') as encrypted_file:
+            encrypted_file.write(encrypted_data)
+
+    def get_data_from_file(self, filename):
+        self.get_key()
+        filename = 'data/' + filename
+        fernet_obj = Fernet(self.key)
+        with open(filename, 'rb') as encrypted_file:
+            encrypted = encrypted_file.read()
+        decrypted_data = fernet_obj.decrypt(encrypted)
+        return decrypted_data.decode('utf-8')
 
     def run_setup(self):
+        self.make_key()
         if 'PY_PASS_MGR_USER' not in os.environ and 'PY_PASS_MGR_PASS' not in os.environ:
             self.get_master_creds_screen()
         self.init_pass_file()
@@ -51,13 +90,11 @@ class Setup:
                 self.master_username_var.set('')
                 self.master_password_var.set('')
                 data_to_put = f'username,password\n{username},{password}'
-                with open('data/master.csv', 'w') as master_file:
-                    master_file.write(data_to_put)
+                self.write_data_to_file(filename='master.csv', data_to_put=data_to_put)
                 self.setup_screen.destroy()
         else:
             messagebox.showerror(title='Empty field(s)?', message='Please don\'t leave any field(s) empty.')
 
     def init_pass_file(self):
         data_to_put = 'tag,username,password\ntemp,temp,temp'
-        with open('data/passwords.csv', 'w') as pass_file:
-            pass_file.write(data_to_put)
+        self.write_data_to_file(filename='passwords.csv', data_to_put=data_to_put)

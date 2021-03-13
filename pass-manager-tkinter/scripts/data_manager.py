@@ -1,6 +1,7 @@
 import pandas
 import os
 from scripts.setup_script import Setup
+import io
 
 
 class DataManager:
@@ -9,12 +10,12 @@ class DataManager:
         self.setup_obj = Setup()
 
     def is_first_start(self):
-        with open('data/master.csv', 'r+') as master_file:
-            master_data = master_file.read()
-        with open('data/passwords.csv', 'r+') as pass_file:
-            pass_data = pass_file.read()
-        if not pass_data and (
-                not master_data or ('PY_PASS_MGR_USER' not in os.environ and 'PY_PASS_MGR_PASS' not in os.environ)):
+        try:
+            with open('data/master.csv', 'r') as file:
+                data = file.read()
+            with open('data/passwords.csv', 'r') as file:
+                data = file.read()
+        except FileNotFoundError:
             return True
         else:
             return False
@@ -24,13 +25,15 @@ class DataManager:
             username = os.environ.get('PY_PASS_MGR_USER')
             password = os.environ.get('PY_PASS_MGR_PASS')
         else:
-            master_data = pandas.read_csv('data/master.csv')
+            master_data = self.setup_obj.get_data_from_file(filename='master.csv')
+            master_data = pandas.read_csv(io.StringIO(master_data))
             username = master_data.username[0]
             password = master_data.password[0]
         return username, password
 
     def get_saved_password_tags(self):
-        password_data = pandas.read_csv('data/passwords.csv')
+        passwords_data = self.setup_obj.get_data_from_file(filename='passwords.csv')
+        password_data = pandas.read_csv(io.StringIO(passwords_data))
         tag_list = []
         for tags in password_data.tag:
             tag_list.append(str(tags).title())
@@ -38,14 +41,12 @@ class DataManager:
         return tag_list
 
     def add_new_password(self, tag, user, password):
-        data_to_add = [[tag, user, password]]
-        new_password_data = pandas.DataFrame(data=data_to_add)
-        with open('data/passwords.csv', 'a') as f:
-            f.write('\n')
-        new_password_data.to_csv('data/passwords.csv', mode='a', header=False, index=False)
+        data_to_add = '\n' + tag + ',' + user + ',' + password
+        self.setup_obj.append_data_to_file(filename='passwords.csv', data_to_append=data_to_add)
 
     def get_all_passwords(self, tag):
-        password_data = pandas.read_csv('data/passwords.csv')
+        passwords_data = self.setup_obj.get_data_from_file(filename='passwords.csv')
+        password_data = pandas.read_csv(io.StringIO(passwords_data))
         usernames = []
         passwords = []
         count = 0
