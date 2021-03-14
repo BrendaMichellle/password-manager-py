@@ -13,23 +13,16 @@ ALL_CHARS = {'NUMBERS': NUMBERS,
 
 class PasswordGenerator:
 
-    def __init__(self, length):
-        self.pass_length = length
-
-    def generate_password(self, has_symbols, has_letters, has_numbers):
+    def generate_password(self, has_symbols, has_letters, has_numbers, pass_length):
         password = ''
         my_list = []
-        if not has_symbols and not has_symbols and not has_numbers:
-            has_letters = True
-            has_symbols = True
-            has_numbers = True
         if has_symbols:
             my_list.append('SYMBOLS')
         if has_letters:
             my_list.append('LETTERS')
         if has_numbers:
             my_list.append('NUMBERS')
-        for i in range(0, self.pass_length):
+        for i in range(0, pass_length):
             which_char = random.choice(my_list)
             that_list = ALL_CHARS[which_char]
             char_to_add = random.choice(that_list)

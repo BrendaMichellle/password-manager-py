@@ -2,6 +2,7 @@ from pymongo import *
 from rich.console import Console
 import configparser
 import time
+from datetime import datetime
 
 
 class DbHandler:
@@ -19,13 +20,13 @@ class DbHandler:
         def wrapper(self, *args, **kwargs):
             console_obj = Console()
             with console_obj.status("Loading..."):
+                time.sleep(1)
                 return function(self, *args, **kwargs)
 
         return wrapper
 
     @_spinner
     def create_db_and_user(self, user='', password='', db_name=''):
-        time.sleep(2)
         if db_name in self.admin_mongo_client.list_database_names():
             # If db already exists, a new user cannot be created.
             return False
@@ -39,7 +40,6 @@ class DbHandler:
 
     @_spinner
     def login(self, user='', password='', db_name=''):
-        time.sleep(2)
         try:
             self.current_user_client = MongoClient(f'{self.host}:{self.port}',
                                                    username=user,
@@ -52,3 +52,46 @@ class DbHandler:
                 return False
         except:
             return False
+
+    @_spinner
+    def add_a_password(self, db_name='', username='', password='', tags=None):
+        if tags is None:
+            tags = []
+        date_set = datetime.today().strftime('%d-%m-%Y')
+        data = {
+            'username': username,
+            'password': password,
+            'tags': tags,
+            'date_set': date_set
+        }
+        database = self.current_user_client[db_name]
+        col = database['passwords']
+        try:
+            col.insert_one(data)
+        except:
+            return False
+        else:
+            return True
+
+    @_spinner
+    def get_passwords(self, db_name, search_tags=None):
+        if search_tags is None:
+            search_tags = []
+        database = self.current_user_client[db_name]
+        col = database['passwords']
+        if len(search_tags) == 0:
+            # We have to find all the passwords
+            return col.find()
+        else:
+            return_list = []
+            all_passwords = col.find()
+            for tag in search_tags:
+                for password_data in all_passwords:
+                    try:
+                        tags = ' '.join(password_data['tags'])
+                    except KeyError:
+                        continue
+                    else:
+                        if tag.lower() in tags:
+                            return_list.append(password_data)
+            return return_list
