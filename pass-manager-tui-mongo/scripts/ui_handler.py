@@ -26,7 +26,7 @@ class UiHandler:
     def start_app(self):
         cont = True
         while cont:
-            print('\n' * 20)
+            print('\n' * 10)
             menu = Table(title='Main Menu')
             menu.add_column('Sr. No.')
             menu.add_column('Option')
@@ -39,7 +39,7 @@ class UiHandler:
             menu.add_row('7.', 'Import Passwords')
             menu.add_row('8.', 'Export Passwords')
             self.print(menu, style="blue on black")
-            print('\n' * 5)
+            print('\n' * 10)
             choice = Prompt.ask('Make a choice:', choices=[str(x) for x in range(1, 9)])
             if choice == '1':
                 self.print('Listing Passwords', style="yellow on black")
