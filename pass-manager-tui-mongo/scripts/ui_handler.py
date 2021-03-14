@@ -1,6 +1,7 @@
 from scripts.db_handler import DbHandler
 from rich import console
-from rich.prompt import Prompt
+from rich.prompt import Prompt, Confirm
+from rich.table import Table
 
 logo = """______            ___  ___                                 ______      
 | ___ \           |  \/  |                                 | ___ \     
@@ -19,7 +20,7 @@ class UiHandler:
         console_obj = console.Console()
         self.print = console_obj.print
 
-    def start_app(self):
+    def login_client(self):
         self.print(logo, style="#ffbe33")
 
         choice = Prompt.ask('1. Log in with username and password.\n2. Create a new user.', choices=['1', '2'])
@@ -29,20 +30,40 @@ class UiHandler:
             password = Prompt.ask("Enter your password", default="", password=True)
             db_name = f'{username}_password'
             done = self.db_obj.login(user=username, password=password, db_name=db_name)
-            print(done)
             if not done:
-                print('here')
                 self.print('Login Failed!', style="red on white")
             else:
                 self.print('Welcome!', style="green on white")
+                self.start_app()
         elif choice == '2':
             # Input the credentials to create the user
             username = Prompt.ask("Enter your username", default="")
             password = Prompt.ask("Enter your password", default="", password=True)
             db_name = f'{username}_password'
             done = self.db_obj.create_db_and_user(user=username, password=password, db_name=db_name)
-            print(done)
             if not done:
                 self.print('Creating the user failed!', style="red on white")
             else:
                 self.print('Welcome!', style="green on white")
+                self.db_obj.login(username, password, db_name)
+                self.start_app()
+
+    def start_app(self):
+        cont = True
+        while cont:
+            menu = Table(title='Main Menu')
+            menu.add_column('Sr. No.')
+            menu.add_column('Option')
+            menu.add_row('1.', 'List All Passwords')
+            menu.add_row('2.', 'Search for a password')
+            menu.add_row('3.', 'Generate a password')
+            menu.add_row('4.', 'Add a new password')
+            menu.add_row('5.', 'Update an existing password')
+            menu.add_row('6.', 'Intelli Dashboard')
+            menu.add_row('7.', 'Import Passwords')
+            menu.add_row('8.', 'Export Passwords')
+            self.print(menu)
+            choice = Prompt.ask('1. Log in with username and password.\n2. Create a new user.',
+                                choices=[str(x) for x in range(1, 9)])
+            print(choice)
+            cont = Confirm.ask("Go again?")
