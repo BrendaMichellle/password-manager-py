@@ -81,7 +81,8 @@ class DbHandler:
         col = database['passwords']
         if len(search_tags) == 0:
             # We have to find all the passwords
-            return col.find()
+            reply = col.find()
+            return reply.count(), reply
         else:
             return_list = []
             all_passwords = col.find()
@@ -94,4 +95,24 @@ class DbHandler:
                     else:
                         if tag.lower() in tags:
                             return_list.append(password_data)
-            return return_list
+            return len(return_list), return_list
+
+    @_spinner
+    def update_password(self, db_name, _id, username='', password='', tags=None):
+        if tags is None:
+            tags = []
+        date_set = datetime.today().strftime('%d-%m-%Y')
+        database = self.current_user_client[db_name]
+        col = database['passwords']
+        data = {
+            'username': username,
+            'password': password,
+            'tags': tags,
+            'date_set': date_set
+        }
+        try:
+            col.update({'_id': _id}, {'$set': data})
+        except:
+            return False
+        else:
+            return True

@@ -25,22 +25,25 @@ class UiHandler:
 
     def start_app(self):
         cont = True
+
+        menu = Table(title='Main Menu')
+        menu.add_column('Sr. No.')
+        menu.add_column('Option')
+        menu.add_row('1.', 'List All Passwords')
+        menu.add_row('2.', 'Search for a password')
+        menu.add_row('3.', 'Generate a password')
+        menu.add_row('4.', 'Add a new password')
+        menu.add_row('5.', 'Update an existing password')
+        menu.add_row('6.', 'Intelli Dashboard')
+        menu.add_row('7.', 'Import Passwords')
+        menu.add_row('8.', 'Export Passwords')
+        menu.add_row('9.', 'Exit')
+
         while cont:
-            print('\n' * 10)
-            menu = Table(title='Main Menu')
-            menu.add_column('Sr. No.')
-            menu.add_column('Option')
-            menu.add_row('1.', 'List All Passwords')
-            menu.add_row('2.', 'Search for a password')
-            menu.add_row('3.', 'Generate a password')
-            menu.add_row('4.', 'Add a new password')
-            menu.add_row('5.', 'Update an existing password')
-            menu.add_row('6.', 'Intelli Dashboard')
-            menu.add_row('7.', 'Import Passwords')
-            menu.add_row('8.', 'Export Passwords')
-            self.print(menu, style="blue on black")
-            print('\n' * 10)
-            choice = Prompt.ask('Make a choice:', choices=[str(x) for x in range(1, 9)])
+            self.print('Press ENTER to continue.', style="White on black")
+            input()
+            self.print(menu, style="white")
+            choice = Prompt.ask('Make a choice:', choices=[str(x) for x in range(1, 10)])
             if choice == '1':
                 self.print('Listing Passwords', style="yellow on black")
                 self.list_passwords('all')
@@ -54,14 +57,17 @@ class UiHandler:
                 self.print('Add a new Password', style="yellow on black")
                 self.add_password()
             elif choice == '5':
-                pass
+                self.print('Update an existing Password', style="yellow on black")
+                self.update_password()
             elif choice == '6':
                 pass
             elif choice == '7':
                 pass
             elif choice == '8':
                 pass
-            cont = Confirm.ask("Go again?")
+            elif choice == '9':
+                cont = False
+
 
     def login_client(self):
         self.print(logo, style="#ffbe33")
@@ -93,10 +99,12 @@ class UiHandler:
 
     def display_passwords(self, pass_list):
         result_table = Table(title='Results')
+        result_table.add_column('Sr. No.')
         result_table.add_column('Username')
         result_table.add_column('Password')
         result_table.add_column('Tags')
         result_table.add_column('Added On')
+        row_count = 0
         for password_data in pass_list:
             try:
                 username = password_data['username']
@@ -106,18 +114,25 @@ class UiHandler:
             except KeyError:
                 continue
             else:
-                result_table.add_row(username, password, tags, date)
+                row_count += 1
+                result_table.add_row(str(row_count), username, password, tags, date)
         self.print(result_table)
 
     def list_passwords(self, key):
         if key == 'all':
-            all_passwords = self.db_obj.get_passwords(db_name=self.db_name, search_tags=None)
-            self.display_passwords(all_passwords)
+            len_passwords, all_passwords = self.db_obj.get_passwords(db_name=self.db_name, search_tags=None)
+            if len_passwords > 0:
+                self.display_passwords(all_passwords)
+            else:
+                self.print('No passwords to show!', style="red on white")
         elif key == 'search':
-            tags = Prompt.ask("Enter the tags (separate with spaces if multiple)", default="default")
+            tags = Prompt.ask("Enter the tag(s) (separate with spaces if multiple)", default="default")
             tags = tags.split(' ')
-            all_passwords = self.db_obj.get_passwords(db_name=self.db_name, search_tags=tags)
-            self.display_passwords(all_passwords)
+            len_passwords, all_passwords = self.db_obj.get_passwords(db_name=self.db_name, search_tags=tags)
+            if len_passwords > 0:
+                self.display_passwords(all_passwords)
+            else:
+                self.print('No passwords to show!', style="red on white")
 
     def generate_password(self):
         has_symbols = Confirm.ask("Do you want it to have symbols?")
@@ -134,7 +149,8 @@ class UiHandler:
     def add_password(self):
         username = Prompt.ask("Enter your username", default="")
         password = Prompt.ask("Enter your password", default="")
-        tags = Prompt.ask("Enter the tags (separate with spaces if multiple)", default="default")
+        tags = Prompt.ask("Enter the tag(s) to search for the password (separate with spaces if multiple)",
+                          default="default")
         tags = tags.split(' ')
         tags_lowered = [tag.lower() for tag in tags]
         done = self.db_obj.add_a_password(db_name=self.db_name, username=username, password=password, tags=tags_lowered)
@@ -142,3 +158,30 @@ class UiHandler:
             self.print('Failed to add the password!', style="red on white")
         else:
             self.print('Done!', style="green on white")
+
+    def update_password(self):
+        tags = Prompt.ask("Enter the tag(s) to search for the password (separate with spaces if multiple)",
+                          default="default")
+        tags = tags.split(' ')
+        len_passwords, all_passwords = self.db_obj.get_passwords(db_name=self.db_name, search_tags=tags)
+        if len_passwords > 0:
+            ids_list = []
+            for password in all_passwords:
+                ids_list.append(password['_id'])
+                self.print(password['_id'])
+            self.display_passwords(all_passwords)
+            pass_to_update = IntPrompt.ask("Enter the number of password data to edit.",
+                                           choices=[str(x) for x in range(1, len(ids_list))])
+            username = Prompt.ask("Enter your username", default=all_passwords[pass_to_update]['username'])
+            password = Prompt.ask("Enter your password", default=all_passwords[pass_to_update]['sam123'])
+            tags = Prompt.ask("Enter the tags (separate with spaces if multiple)",
+                              default=all_passwords[pass_to_update]['tags'])
+            tags = tags.split(' ')
+            tags_lowered = [tag.lower() for tag in tags]
+            done = self.db_obj.update_password(db_name=self.db_name, _id=ids_list[pass_to_update], username=username,
+                                               password=password,
+                                               tags=tags_lowered)
+            if not done:
+                self.print('Failed to update the password!', style="red on white")
+            else:
+                self.print('Done!', style="green on white")
