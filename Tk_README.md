@@ -2,7 +2,7 @@
 
 ### Pre-requisites:
 
-1. Install Python 3.
+1. Install [Python 3](https://www.python.org/download/releases/3.0/).
 2. Install the requirements ([you can find them here](pass-manager-tkinter/requirements.txt)) into a virtual python
    environment.
     - Instructions on how to create one and install the requirements can be found in
