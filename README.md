@@ -42,6 +42,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://jaid.tech/"><img src="https://avatars.githubusercontent.com/u/33520257?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jai Kumar Dewani</b></sub></a><br /><a href="#ideas-jai-dewani" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="http://www.nhcarrigan.com"><img src="https://avatars.githubusercontent.com/u/63889819?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nicholas Carrigan (he/him)</b></sub></a><br /><a href="https://github.com/SamDev98/password-manager-py/commits?author=nhcarrigan" title="Documentation">📖</a></td>
   </tr>
 </table>
