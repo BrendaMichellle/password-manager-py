@@ -1,7 +1,4 @@
 <p>
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
     <a href="" alt="License">
         <img src="https://img.shields.io/github/license/SamDev98/password-manager-py?style=flat-square"/>
     </a>
@@ -13,6 +10,9 @@
     </a>
     <a href="" alt="Maintained">
         <img src="https://img.shields.io/maintenance/yes/2021?style=flat-square"/>
+    </a>
+    <a href="" alt="Contributors">
+        <img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square"/>
     </a>
 </p>
 
@@ -33,6 +33,7 @@ python.
 
 1. Web App using Django.
 2. Android App.
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -54,4 +55,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
+Contributions of any kind welcome!
