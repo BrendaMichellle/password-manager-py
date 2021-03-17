@@ -25,14 +25,10 @@ python.
 
 ### Current implementations available:
 
-1. Tkinter-based GUI Application.
-    - Documentation [here.](Tk_README.md)
-    - Code-base [here.](pass-manager-tkinter)
-
-### Planned implementations:
-
-1. Web App using Django.
-2. Android App.
+| Title 	| Description 	| Storage 	| Documentations 	|
+|:-:	|:-:	|:-:	|:-:	|
+| Desktop GUI Application: Encrypted Files 	| A Tkinter based desktop GUI application that uses locally stored encrypted files for data storage. 	| Local-only, Encrypted files. 	| [Here!](docs/Tk_encrypted_README.md) 	|
+| Terminal GUI Application: Mongodb 	| A Terminal based GUI application, that is fast, lightweight and simple. Gets the job done quickly. It uses Mongo Db for data storage. 	| Local/Hosted, Mongo db. 	| [Here!](docs/Tui_mongo_README.md) 	|
 
 ## Contributors ✨
 
