@@ -1,25 +1,28 @@
-## Tkinter-based-gui:
+## Tkinter-based-gui with encrypted files:
+
+The more good-looking desktop GUI password manager application based on tkinter. 
+<br>
+This is for someone who only wants to
+use the app locally and/or not use any hidden/external databases for storage.
+<br>
+The data is stored in encrypted files!
+<br>
+It has all the basic features.
 
 ### Pre-requisites:
 
-1. Install [Python 3](https://www.python.org/download/releases/3.0/).
-2. Install the requirements ([you can find them here](pass-manager-tkinter/requirements.txt)) into a virtual python
-   environment.
-    - Instructions on how to create one and install the requirements can be found in
-      the [official documentation](https://docs.python.org/3/tutorial/venv.html), Or
-    - Refer to this [quick guide](guides/venv.md) specifically made for this repo.
-3. Clone the repo. (Optional: Use the `dev` branch for Beta features!)
-4. Optional (but recommended): Set 2 environment variables on your system:
+1. Follow [these](guides/basics.md) steps for initial **python and environment** setup.
+2. Optional (but **recommended**): Set 2 environment variables on your system:
     - PY_PASS_MGR_USER: This will be the master username for the application.
     - PY_PASS_MGR_PASS: This will be the master password for the application.
 
 ### How to run:
 
-1. Activate the venv for your session:
-    - Windows: \path\to\venv\Scripts\activate.bat
-    - Unix or MacOS: source /path/to/venv/bin/activate
-2. Now, inside the `pass-manager-tkinter` directory, simply run the command: `python3 launcher.py`. Find this
-   file [here.](pass-manager-tkinter/launcher.py)
+1. Activate the venv you created, for this session:
+    - Windows: `\path\to\venv\Scripts\activate.bat`
+    - Unix or MacOS: `source /path/to/venv/bin/activate`
+2. Now, inside the `/projects/pass-manager-tkinter-encrypted` directory of this repo, simply run the
+   command: `python3 launcher.py`. Find this file [here!](../projects/pass-manager-tkinter-encrypted/launcher.py)
 
 ### How to use:
 
@@ -31,8 +34,8 @@
 
 | Screen                  | Image                                                                                              |
 |-------------------------|----------------------------------------------------------------------------------------------------|
-| Login Screen            | ![Login Screen](screenshots/tkinter-gui/login_window.png "Login Screen")                           |
-| Main Application Screen | ![Main App Screen](screenshots/tkinter-gui/main_app_window.png "Main App Screen")                  |
-| Add a new password      | ![Add a new password](screenshots/tkinter-gui/add_new_password_window.png "Add a new password")    |
-| List saved passwords    | ![List saved passwords](screenshots/tkinter-gui/list_passwords_window.png "List saved passwords")  |
-| Generate a new password | ![Generate a password](screenshots/tkinter-gui/generate_password_window.png "Generate a password") |
+| Login Screen            | ![Login Screen](res/screenshots/tkinter-encrypted/login_window.png "Login Screen")                           |
+| Main Application Screen | ![Main App Screen](res/screenshots/tkinter-encrypted/main_app_window.png "Main App Screen")                  |
+| Add a new password      | ![Add a new password](res/screenshots/tkinter-encrypted/add_new_password_window.png "Add a new password")    |
+| List saved passwords    | ![List saved passwords](res/screenshots/tkinter-encrypted/list_passwords_window.png "List saved passwords")  |
+| Generate a new password | ![Generate a password](res/screenshots/tkinter-encrypted/generate_password_window.png "Generate a password") |

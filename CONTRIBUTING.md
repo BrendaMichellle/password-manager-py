@@ -7,13 +7,11 @@ Please note we have a [code of conduct](CODE_OF_CONDUCT.md), please follow it in
 
 ## Pull Request Process
 
-1. Please make sure you point your changes to the `dev` branch only. The changes will be tested and eventually be
-   pushed to the `main` branch, that is the stable version of the application.
+1. Please make sure you point your changes to the `dev` branch only. The changes will be tested and eventually be pushed
+   to the `main` branch, that is the stable version of the application.
 2. Ensure all new requirements are added to requirements.txt in the respective project directories.
-3. Once a pull request is approved by the code owners, a maintainer will merge it.
+3. Once a pull request is approved by a maintainer, they will merge it.
 
 ## Setup For Development:
 
-1. For tkinter-gui, the dev setup process is the same as for installing it.
-2. It can be found in the [README](Tk_README.md) for the tkinter-based application.
-3. Make sure all the requirements are satisfied.
+Follow the specific project(s) readme(s) to get the setup steps. Find them [here.](docs)

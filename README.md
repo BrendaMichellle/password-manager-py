@@ -20,18 +20,21 @@
 
 ## 🐍 Python Password Manager 🔐
 
-## An extensive password manager built using Python ✨
+### An extensive password manager built using Python ✨
 
-This repo will consist of various implementations for a password manager, all of which will be implemented only using
-python.
+Multiple implementations for a password manager, all based on python. Choose an implementation based on what features
+you'd like!
+<br>
+More implementations on the way!
 
 ### Current implementations available:
 
-| Title 	| Description 	| Storage 	| Documentations 	|
-|:-:	|:-:	|:-:	|:-:	|
-| Desktop GUI Application: Encrypted Files 	| A Tkinter based desktop GUI application that uses locally stored encrypted files for data storage. 	| Local-only, Encrypted files. 	| [Here!](docs/Tk_encrypted_README.md) 	|
-| Terminal GUI Application: Mongodb 	| A Terminal based GUI application, that is fast, lightweight and simple. Gets the job done quickly. It uses Mongo Db for data storage. 	| Local/Hosted, Mongo db. 	| [Here!](docs/Tui_mongo_README.md) 	|
+|                  Title                    |                                                              Description                                                                |            Storage            |            Documentations                |
+|:---------------------------------------:	|:-------------------------------------------------------------------------------------------------------------------------------------:	|:----------------------------:	|:------------------------------------:	|
+| Desktop GUI Application:Encrypted Files    |                   A Tkinter based desktop GUI application that uses locally stored encrypted files for data storage.                    | Local-only, Encrypted files.    | [Here!](docs/Tk_encrypted_README.md)    |
+|    Terminal GUI Application: Mongodb        | A Terminal based GUI application, that is fast, lightweight and simple. Gets the job done quickly. It uses Mongo Db for data storage.    |    Local/Hosted, Mongo db.    |   [Here!](docs/Tui_mongo_README.md)    |
 
+To request more features/implementations, please create an issue or add an idea in the discussions on the repo. :)
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -39,6 +42,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+
 <table>
   <tr>
     <td align="center"><a href="https://github.com/schmelto"><img src="https://avatars.githubusercontent.com/u/30869493?v=4?s=100" width="100px;" alt=""/><br /><sub><b>schmelto</b></sub></a><br /><a href="https://github.com/SamDev98/password-manager-py/commits?author=schmelto" title="Documentation">📖</a></td>
@@ -53,4 +57,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
-Contributions of any kind welcome!
+Contributions of any kind welcome and appreciated!
