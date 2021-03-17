@@ -68,10 +68,9 @@ class UiHandler:
             elif choice == '9':
                 cont = False
 
-
     def login_client(self):
+        """A function to display login panel and get user credentials to use"""
         self.print(logo, style="#ffbe33")
-
         choice = Prompt.ask('1. Log in with username and password.\n2. Create a new user.', choices=['1', '2'])
         if choice == '1':
             # Input the credentials to log in
@@ -98,6 +97,11 @@ class UiHandler:
                 self.start_app()
 
     def display_passwords(self, pass_list):
+        """
+        Create a table and display the list of passwords
+        Params:
+            pass_list: A list of data objects fetched from passwords table
+        """
         result_table = Table(title='Results')
         result_table.add_column('Sr. No.')
         result_table.add_column('Username')
@@ -119,6 +123,11 @@ class UiHandler:
         self.print(result_table)
 
     def list_passwords(self, key):
+        """
+        Get the list of passwords from db based on type of search used
+        Params:
+            key: A string with values: 'all' OR 'search'
+        """
         if key == 'all':
             len_passwords, all_passwords = self.db_obj.get_passwords(db_name=self.db_name, search_tags=None)
             if len_passwords > 0:
@@ -135,6 +144,7 @@ class UiHandler:
                 self.print('No passwords to show!', style="red on white")
 
     def generate_password(self):
+        """Generate a new password based on user requirements"""
         has_symbols = Confirm.ask("Do you want it to have symbols?")
         has_letters = True  # Always have letters
         has_numbers = Confirm.ask("Do you want it to have numbers?")
@@ -147,6 +157,7 @@ class UiHandler:
         self.print('Password was generated and copied to clipboard!', style="green on white")
 
     def add_password(self):
+        """Add a new password to the db"""
         username = Prompt.ask("Enter your username", default="")
         password = Prompt.ask("Enter your password", default="")
         tags = Prompt.ask("Enter the tag(s) to search for the password (separate with spaces if multiple)",
@@ -160,6 +171,7 @@ class UiHandler:
             self.print('Done!', style="green on white")
 
     def update_password(self):
+        """Update an existing password"""
         tags = Prompt.ask("Enter the tag(s) to search for the password (separate with spaces if multiple)",
                           default="default")
         tags = tags.split(' ')
@@ -171,11 +183,12 @@ class UiHandler:
                 self.print(password['_id'])
             self.display_passwords(all_passwords)
             pass_to_update = IntPrompt.ask("Enter the number of password data to edit.",
-                                           choices=[str(x) for x in range(1, len(ids_list))])
+                                           choices=[str(x) for x in range(1, len(ids_list) + 1)])
+            pass_to_update -= 1
             username = Prompt.ask("Enter your username", default=all_passwords[pass_to_update]['username'])
-            password = Prompt.ask("Enter your password", default=all_passwords[pass_to_update]['sam123'])
+            password = Prompt.ask("Enter your password", default=all_passwords[pass_to_update]['password'])
             tags = Prompt.ask("Enter the tags (separate with spaces if multiple)",
-                              default=all_passwords[pass_to_update]['tags'])
+                              default=' '.join(all_passwords[pass_to_update]['tags']))
             tags = tags.split(' ')
             tags_lowered = [tag.lower() for tag in tags]
             done = self.db_obj.update_password(db_name=self.db_name, _id=ids_list[pass_to_update], username=username,
