@@ -16,7 +16,7 @@
     </a>
 </p>
 
-<img src="docs/res/images/pass-manager.gif" width="1250" height="400" />
+<img src="docs/res/images/pass-manager-banner.gif" width="1250" height="400" />
 
 ## 🐍 Python Password Manager 🔐
 
