@@ -16,7 +16,9 @@
     </a>
 </p>
 
-# 🐍 Python Password Manager 🔐
+<img src="docs/res/images/pass-manager.gif" width="40" height="40" />
+
+## 🐍 Python Password Manager 🔐
 
 ## An extensive password manager built using Python ✨
 
@@ -48,7 +50,6 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
