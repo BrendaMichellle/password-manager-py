@@ -9,7 +9,7 @@
         <img src="https://img.shields.io/maintenance/yes/2021?style=flat-square"/>
     </a>
     <a href="" alt="Contributors">
-        <img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square"/>
+        <img src="https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square"/>
     </a>
 <br>
     <a href="" alt="Build Status">
