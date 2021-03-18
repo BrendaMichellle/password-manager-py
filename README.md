@@ -43,10 +43,10 @@ More implementations on the way!
 
 ### Current implementations available:
 
-|                  Title                    |                                                              Description                                                                |            Storage            |            Documentations                |
-|:---------------------------------------:	|:-------------------------------------------------------------------------------------------------------------------------------------:	|:----------------------------:	|:------------------------------------:	|
-| Desktop GUI Application:Encrypted Files    |                   A Tkinter based desktop GUI application that uses locally stored encrypted files for data storage.                    | Local-only, Encrypted files.    | [Here!](docs/Tk_encrypted_README.md)    |
-|    Terminal GUI Application: Mongodb        | A Terminal based GUI application, that is fast, lightweight and simple. Gets the job done quickly. It uses Mongo Db for data storage.    |    Local/Hosted, Mongo db.    |   [Here!](docs/Tui_mongo_README.md)    |
+|                  Title                  	|                                                              Description                                                              	|            Storage           	|                                                 Screenshots                                                	|            Documentations            	|
+|:---------------------------------------:	|:-------------------------------------------------------------------------------------------------------------------------------------:	|:----------------------------:	|:----------------------------------------------------------------------------------------------------------:	|:------------------------------------:	|
+| Desktop GUI Application:Encrypted Files 	|                   A Tkinter based desktop GUI application that uses locally stored encrypted files for data storage.                  	| Local-only, Encrypted files. 	| [Here!](https://github.com/SamDev98/password-manager-py/blob/main/docs/Tk_encrypted_README.md#screenshots) 	| [Here!](docs/Tk_encrypted_README.md) 	|
+|    Terminal GUI Application: Mongodb    	| A Terminal based GUI application, that is fast, lightweight and simple. Gets the job done quickly. It uses Mongo Db for data storage. 	|    Local/Hosted, Mongo db.   	|   [Here!](https://github.com/SamDev98/password-manager-py/blob/main/docs/Tui_mongo_README.md#screenshots)  	|   [Here!](docs/Tui_mongo_README.md)  	|
 
 To request more features/implementations, please create an issue or add an idea in the discussions on the repo. :)
 <br>
