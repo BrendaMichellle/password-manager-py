@@ -5,14 +5,28 @@
     <a href="https://github.com/SamDev98/password-manager-py/releases" alt="Releases">
         <img src="https://img.shields.io/github/v/release/SamDev98/password-manager-py?include_prereleases&style=flat-square"/>
     </a>
-    <a href="https://discord.gg/7sSs4AC3ey" alt="Discord">
-        <img src="https://img.shields.io/discord/813065529639436328?style=flat-square"/>
-    </a>
     <a href="" alt="Maintained">
         <img src="https://img.shields.io/maintenance/yes/2021?style=flat-square"/>
     </a>
     <a href="" alt="Contributors">
         <img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square"/>
+    </a>
+<br>
+    <a href="" alt="Build Status">
+        <img src="https://github.com/samdev98/password-manager-py/actions/workflows/python-app.yml/badge.svg"/>
+    </a>
+    <a href="" alt="Greetings">
+        <img src="https://github.com/samdev98/password-manager-py/actions/workflows/greetings.yml/badge.svg"/>
+    </a>
+    <a href="" alt="Label">
+        <img src="https://github.com/samdev98/password-manager-py/actions/workflows/label.yml/badge.svg"/>
+    </a>
+    <a href="" alt="Stale">
+        <img src="https://github.com/samdev98/password-manager-py/actions/workflows/stale.yml/badge.svg"/>
+    </a>
+<br>
+    <a href="https://discord.gg/7sSs4AC3ey" alt="Discord">
+        <img src="https://img.shields.io/discord/813065529639436328?style=flat-square"/>
     </a>
 </p>
 
@@ -35,6 +49,7 @@ More implementations on the way!
 |    Terminal GUI Application: Mongodb        | A Terminal based GUI application, that is fast, lightweight and simple. Gets the job done quickly. It uses Mongo Db for data storage.    |    Local/Hosted, Mongo db.    |   [Here!](docs/Tui_mongo_README.md)    |
 
 To request more features/implementations, please create an issue or add an idea in the discussions on the repo. :)
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
