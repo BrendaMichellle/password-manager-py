@@ -1,38 +1,57 @@
 <p>
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
     <a href="" alt="License">
         <img src="https://img.shields.io/github/license/SamDev98/password-manager-py?style=flat-square"/>
     </a>
     <a href="https://github.com/SamDev98/password-manager-py/releases" alt="Releases">
         <img src="https://img.shields.io/github/v/release/SamDev98/password-manager-py?include_prereleases&style=flat-square"/>
     </a>
-    <a href="https://discord.gg/7sSs4AC3ey" alt="Discord">
-        <img src="https://img.shields.io/discord/813065529639436328?style=flat-square"/>
-    </a>
     <a href="" alt="Maintained">
         <img src="https://img.shields.io/maintenance/yes/2021?style=flat-square"/>
     </a>
+    <a href="" alt="Contributors">
+        <img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square"/>
+    </a>
+<br>
+    <a href="" alt="Build Status">
+        <img src="https://github.com/samdev98/password-manager-py/actions/workflows/python-app.yml/badge.svg"/>
+    </a>
+    <a href="" alt="Greetings">
+        <img src="https://github.com/samdev98/password-manager-py/actions/workflows/greetings.yml/badge.svg"/>
+    </a>
+    <a href="" alt="Label">
+        <img src="https://github.com/samdev98/password-manager-py/actions/workflows/label.yml/badge.svg"/>
+    </a>
+    <a href="" alt="Stale">
+        <img src="https://github.com/samdev98/password-manager-py/actions/workflows/stale.yml/badge.svg"/>
+    </a>
+<br>
+    <a href="https://discord.gg/7sSs4AC3ey" alt="Discord">
+        <img src="https://img.shields.io/discord/813065529639436328?style=flat-square"/>
+    </a>
 </p>
 
-# 🐍 Python Password Manager 🔐
+![Password Manager Logo](docs/res/images/PassManagerPy.png)
 
-## An extensive password manager built using Python ✨
+## 🐍 Python Password Manager 🔐
 
-This repo will consist of various implementations for a password manager, all of which will be implemented only using
-python.
+### An extensive password manager built using Python ✨
+
+Multiple implementations for a password manager, all based on python. Choose an implementation based on what features
+you'd like!
+<br>
+More implementations on the way!
 
 ### Current implementations available:
 
-1. Tkinter-based GUI Application.
-    - Documentation [here.](Tk_README.md)
-    - Code-base [here.](pass-manager-tkinter)
+|                  Title                    |                                                              Description                                                                |            Storage            |            Documentations                |
+|:---------------------------------------:	|:-------------------------------------------------------------------------------------------------------------------------------------:	|:----------------------------:	|:------------------------------------:	|
+| Desktop GUI Application:Encrypted Files    |                   A Tkinter based desktop GUI application that uses locally stored encrypted files for data storage.                    | Local-only, Encrypted files.    | [Here!](docs/Tk_encrypted_README.md)    |
+|    Terminal GUI Application: Mongodb        | A Terminal based GUI application, that is fast, lightweight and simple. Gets the job done quickly. It uses Mongo Db for data storage.    |    Local/Hosted, Mongo db.    |   [Here!](docs/Tui_mongo_README.md)    |
 
-### Planned implementations:
+To request more features/implementations, please create an issue or add an idea in the discussions on the repo. :)
+<br>
+**NOTE**: Before contributing, please read [this](CONTRIBUTING.md).
 
-1. Web App using Django.
-2. Android App.
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -40,6 +59,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+
 <table>
   <tr>
     <td align="center"><a href="https://github.com/schmelto"><img src="https://avatars.githubusercontent.com/u/30869493?v=4?s=100" width="100px;" alt=""/><br /><sub><b>schmelto</b></sub></a><br /><a href="https://github.com/SamDev98/password-manager-py/commits?author=schmelto" title="Documentation">📖</a></td>
@@ -51,7 +71,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification.
+Contributions of any kind welcome and appreciated!

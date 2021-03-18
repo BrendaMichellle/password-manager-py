@@ -14,6 +14,10 @@ ALL_CHARS = {'NUMBERS': NUMBERS,
 def generate_password(has_symbols, has_letters, has_numbers, pass_length):
     password = ''
     my_list = []
+    if not has_symbols and not has_symbols and not has_numbers:
+        has_letters = True
+        has_symbols = True
+        has_numbers = True
     if has_symbols:
         my_list.append('SYMBOLS')
     if has_letters:
