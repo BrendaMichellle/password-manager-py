@@ -1,0 +1,14 @@
+documentation:
+  - docs/*
+  - README.md
+  - CONTRIBUTING.md
+  - CODE_OF_CONDUCT.md
+
+enhancement:
+  - projects/*
+
+tui-mongo:
+  - projects/pass-manager-tui-mongo/*
+
+tkinter-encrypted:
+  - projects/pass-manager-tkinter-encrypted/*

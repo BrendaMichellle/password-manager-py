@@ -49,6 +49,8 @@ More implementations on the way!
 |    Terminal GUI Application: Mongodb        | A Terminal based GUI application, that is fast, lightweight and simple. Gets the job done quickly. It uses Mongo Db for data storage.    |    Local/Hosted, Mongo db.    |   [Here!](docs/Tui_mongo_README.md)    |
 
 To request more features/implementations, please create an issue or add an idea in the discussions on the repo. :)
+<br>
+**NOTE**: Before contributing, please read [this](CONTRIBUTING.md).
 
 ## Contributors ✨
 
