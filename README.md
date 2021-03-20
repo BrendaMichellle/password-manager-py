@@ -42,9 +42,21 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/samdev98/password-manager-py">
-    <img src="docs/res/images/PassManagerPy.png" alt="Logo" width="450" height="450">
-  </a>
+    <a href="https://github.com/samdev98/password-manager-py">
+        <img src="docs/res/images/PassManagerPy.png" alt="Logo" width="450" height="450">
+    </a>
+    <p align="center">
+    An awesome open-sourced password manager!
+    <br />
+    <a href="https://github.com/SamDev98/password-manager-py/tree/dev#current-implementations-available"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/SamDev98/password-manager-py">View Demo</a>
+    ·
+    <a href="https://github.com/SamDev98/password-manager-py/issues/new/choose">Report Bug</a>
+    ·
+    <a href="https://github.com/SamDev98/password-manager-py/discussions/new">Request Feature</a>
+  </p>
 </p>
 
 ## 🐍 Python Password Manager 🔐
