@@ -43,7 +43,7 @@
 
 <p align="center">
   <a href="https://github.com/samdev98/password-manager-py">
-    <img src="docs/res/images/PassManagerPy.png" alt="Logo" width="280" height="280">
+    <img src="docs/res/images/PassManagerPy.png" alt="Logo" width="450" height="450">
   </a>
 </p>
 
