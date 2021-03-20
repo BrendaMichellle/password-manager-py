@@ -19,8 +19,8 @@ class DbHandler:
         # Create a spinner for UI
         def wrapper(self, *args, **kwargs):
             console_obj = Console()
-            with console_obj.status("Loading..."):
-                time.sleep(1)
+            with console_obj.status("Processing..."):
+                time.sleep(0.5)
                 return function(self, *args, **kwargs)
 
         return wrapper
@@ -112,6 +112,17 @@ class DbHandler:
         }
         try:
             col.update({'_id': _id}, {'$set': data})
+        except:
+            return False
+        else:
+            return True
+
+    @_spinner
+    def delete_password(self, db_name, _id):
+        database = self.current_user_client[db_name]
+        col = database['passwords']
+        try:
+            col.delete_one({'_id': _id})
         except:
             return False
         else:
