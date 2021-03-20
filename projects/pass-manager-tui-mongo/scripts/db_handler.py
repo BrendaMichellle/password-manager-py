@@ -54,11 +54,13 @@ class DbHandler:
             return False
 
     @_spinner
-    def add_a_password(self, db_name='', username='', password='', tags=None):
+    def add_a_password(self, db_name='', website='', username='', password='', tags=None):
         if tags is None:
             tags = []
+        print('in db=', tags)
         date_set = datetime.today().strftime('%d-%m-%Y')
         data = {
+            'website': website,
             'username': username,
             'password': password,
             'tags': tags,
@@ -81,8 +83,8 @@ class DbHandler:
         col = database['passwords']
         if len(search_tags) == 0:
             # We have to find all the passwords
-            reply = col.find()
-            return reply.count(), reply
+            reply = col.find({})
+            return reply.count(), list(reply)
         else:
             return_list = []
             all_passwords = col.find()
@@ -98,13 +100,14 @@ class DbHandler:
             return len(return_list), return_list
 
     @_spinner
-    def update_password(self, db_name, _id, username='', password='', tags=None):
+    def update_password(self, db_name, _id, website='', username='', password='', tags=None):
         if tags is None:
             tags = []
         date_set = datetime.today().strftime('%d-%m-%Y')
         database = self.current_user_client[db_name]
         col = database['passwords']
         data = {
+            'website': website,
             'username': username,
             'password': password,
             'tags': tags,
