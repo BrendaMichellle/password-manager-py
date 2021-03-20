@@ -3,6 +3,7 @@ from scripts.password_generator import PasswordGenerator
 from rich import console
 from rich.prompt import Prompt, Confirm, IntPrompt
 from rich.table import Table
+import pyperclip
 
 logo = """______            ___  ___                                 ______      
 | ___ \           |  \/  |                                 | ___ \     
@@ -41,11 +42,11 @@ class UiHandler:
         menu.add_row('10.', 'Exit')
 
         while cont:
-            self.print('Press ENTER to continue.', style="White on black")
-            input()
-            self.print(menu, style="white")
-            choice = Prompt.ask('Make a choice:', choices=[str(x) for x in range(1, 11)])
-            if choice == '1':
+            choice = Prompt.ask('Make a choice: {ENTER for menu}\n\n', choices=[str(x) for x in range(0, 11)],
+                                default='0')
+            if choice == '0':
+                self.print(menu, style="white")
+            elif choice == '1':
                 self.print('Listing Passwords', style="yellow on black")
                 self.list_passwords('all')
             elif choice == '2':
@@ -113,6 +114,8 @@ class UiHandler:
         result_table.add_column('Tags')
         result_table.add_column('Added On')
         row_count = 0
+        usernames_list = []
+        passwords_list = []
         for password_data in pass_list:
             try:
                 username = password_data['username']
@@ -123,8 +126,20 @@ class UiHandler:
                 continue
             else:
                 row_count += 1
+                usernames_list.append(username)
+                passwords_list.append(password)
                 result_table.add_row(str(row_count), username, password, tags, date)
         self.print(result_table)
+        choose = Prompt.ask('Enter a number to copy the password data: {ENTER to skip}\n\n',
+                            choices=[str(x) for x in range(0, row_count + 1)],
+                            default='0')
+        choose = int(choose)
+        if choose > 0:
+            pyperclip.copy(usernames_list[choose-1])
+            self.print('Username copied! Press Enter to copy the password...')
+            input()
+            pyperclip.copy(passwords_list[choose-1])
+            self.print('Password copied!')
 
     def list_passwords(self, key):
         """
