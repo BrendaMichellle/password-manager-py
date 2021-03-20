@@ -26,14 +26,9 @@ class ExtFilesHandler:
             for name, group in zip(names_list, groups_list):
                 name = str(name)
                 group = str(name)
-                print('b4=', name)
-                print(group)
                 if name == 'nan' or name == '\x10':
                     name = ''
                 if group == 'nan' or group == '\x10':
                     group = ''
-                print('aft=', name)
-                print(group)
-                print('togrther=', name.lower() + ' ' + group.lower())
                 tags_list.append(name.lower() + ' ' + group.lower())
         return websites_list, usernames_list, pass_list, tags_list

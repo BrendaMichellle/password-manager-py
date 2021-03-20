@@ -43,9 +43,9 @@ class UiHandler:
         menu.add_row('7.', 'Intelli Dashboard')
         menu.add_row('8.', 'Import Passwords')
         menu.add_row('9.', 'Export Passwords')
-        menu.add_row('10.', 'Exit')
-        choices = [str(x) for x in range(0, 11)]
+        choices = [str(x) for x in range(0, 10)]
         choices.append('clear')
+        choices.append('exit')
 
         while cont:
             choice = Prompt.ask('Make a choice: {ENTER for menu}\n\n', choices=choices,
@@ -77,7 +77,7 @@ class UiHandler:
                 self.import_passwords()
             elif choice == '9':
                 pass
-            elif choice == '10':
+            elif choice == 'exit':
                 cont = False
             elif choice == 'clear':
                 self.print('\n' * 10)
@@ -322,8 +322,6 @@ class UiHandler:
                     self.print("There was a problem importing your passwords", style="red on white")
                     flagged = True
                     break
-                else:
-                    self.print(tag)
             if not flagged:
                 self.print("All passwords were imported successfully! [green]:heavy_check_mark:",
                            style="green on white")

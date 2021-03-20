@@ -57,7 +57,6 @@ class DbHandler:
     def add_a_password(self, db_name='', website='', username='', password='', tags=None):
         if tags is None:
             tags = []
-        print('in db=', tags)
         date_set = datetime.today().strftime('%d-%m-%Y')
         data = {
             'website': website,
