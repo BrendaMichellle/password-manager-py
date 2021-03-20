@@ -94,7 +94,7 @@ class DbHandler:
                     except KeyError:
                         continue
                     else:
-                        if tag.lower() in tags:
+                        if not tags.find(tag.lower()) == -1:
                             return_list.append(password_data)
             return len(return_list), return_list
 
