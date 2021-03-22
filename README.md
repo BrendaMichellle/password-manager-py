@@ -1,15 +1,29 @@
 <p>
+<br>
     <a href="" alt="License">
-        <img src="https://img.shields.io/github/license/SamDev98/password-manager-py?style=flat-square"/>
+        <img src="https://img.shields.io/github/license/SamDev98/password-manager-py?style=for-the-badge"/>
     </a>
     <a href="https://github.com/SamDev98/password-manager-py/releases" alt="Releases">
-        <img src="https://img.shields.io/github/v/release/SamDev98/password-manager-py?include_prereleases&style=flat-square"/>
+        <img src="https://img.shields.io/github/v/release/SamDev98/password-manager-py?include_prereleases&style=for-the-badge"/>
     </a>
     <a href="" alt="Maintained">
-        <img src="https://img.shields.io/maintenance/yes/2021?style=flat-square"/>
+        <img src="https://img.shields.io/maintenance/yes/2021?style=for-the-badge"/>
     </a>
     <a href="" alt="Contributors">
-        <img src="https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square"/>
+        <img src="https://img.shields.io/github/contributors/samdev98/password-manager-py.svg?style=for-the-badge"/>
+    </a>
+    <a href="https://discord.gg/7sSs4AC3ey" alt="Discord">
+        <img src="https://img.shields.io/discord/813065529639436328?style=for-the-badge"/>
+    </a>
+    <a href="https://www.linkedin.com/in/sambhavrakhe" alt="Linkedin">
+        <img src="https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555"/>
+    </a>
+<br>
+    <a href="https://github.com/SamDev98/password-manager-py/network/members" alt="Forks">
+        <img src="https://img.shields.io/github/forks/SamDev98/password-manager-py.svg?style=for-the-badge"/>
+    </a>
+    <a href="https://github.com/SamDev98/password-manager-py/stargazers" alt="Stars">
+        <img src="https://img.shields.io/github/stars/SamDev98/password-manager-py.svg?style=for-the-badge"/>
     </a>
 <br>
     <a href="" alt="Build Status">
@@ -25,12 +39,25 @@
         <img src="https://github.com/samdev98/password-manager-py/actions/workflows/stale.yml/badge.svg"/>
     </a>
 <br>
-    <a href="https://discord.gg/7sSs4AC3ey" alt="Discord">
-        <img src="https://img.shields.io/discord/813065529639436328?style=flat-square"/>
-    </a>
 </p>
 
-![Password Manager Logo](docs/res/images/PassManagerPy.png)
+<p align="center">
+    <a href="https://github.com/samdev98/password-manager-py">
+        <img src="docs/res/images/PassManagerPy.png" alt="Logo" width="450" height="450">
+    </a>
+    <p align="center">
+    An awesome open-sourced password manager!
+    <br />
+    <a href="https://github.com/SamDev98/password-manager-py/tree/dev#current-implementations-available"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/SamDev98/password-manager-py">View Demo</a>
+    ·
+    <a href="https://github.com/SamDev98/password-manager-py/issues/new/choose">Report Bug</a>
+    ·
+    <a href="https://github.com/SamDev98/password-manager-py/discussions/new">Request Feature</a>
+  </p>
+</p>
 
 ## 🐍 Python Password Manager 🔐
 
@@ -43,10 +70,10 @@ More implementations on the way!
 
 ### Current implementations available:
 
-|                  Title                  	|                                                              Description                                                              	|            Storage           	|                                                 Screenshots                                                	|            Documentations            	|
+|                  Title                    |                                                              Description                                                                |            Storage            |                                                 Screenshots                                                    |            Documentations                |
 |:---------------------------------------:	|:-------------------------------------------------------------------------------------------------------------------------------------:	|:----------------------------:	|:----------------------------------------------------------------------------------------------------------:	|:------------------------------------:	|
-| Desktop GUI Application:Encrypted Files 	|                   A Tkinter based desktop GUI application that uses locally stored encrypted files for data storage.                  	| Local-only, Encrypted files. 	| [Here!](https://github.com/SamDev98/password-manager-py/blob/main/docs/Tk_encrypted_README.md#screenshots) 	| [Here!](docs/Tk_encrypted_README.md) 	|
-|    Terminal GUI Application: Mongodb    	| A Terminal based GUI application, that is fast, lightweight and simple. Gets the job done quickly. It uses Mongo Db for data storage. 	|    Local/Hosted, Mongo db.   	|   [Here!](https://github.com/SamDev98/password-manager-py/blob/main/docs/Tui_mongo_README.md#screenshots)  	|   [Here!](docs/Tui_mongo_README.md)  	|
+| Desktop GUI Application:Encrypted Files    |                   A Tkinter based desktop GUI application that uses locally stored encrypted files for data storage.                    | Local-only, Encrypted files.    | [Here!](https://github.com/SamDev98/password-manager-py/blob/main/docs/Tk_encrypted_README.md#screenshots)    | [Here!](docs/Tk_encrypted_README.md)    |
+|    Terminal GUI Application: Mongodb        | A Terminal based GUI application, that is fast, lightweight and simple. Gets the job done quickly. It uses Mongo Db for data storage.    |    Local/Hosted, Mongo db.    |   [Here!](https://github.com/SamDev98/password-manager-py/blob/main/docs/Tui_mongo_README.md#screenshots)    |   [Here!](docs/Tui_mongo_README.md)    |
 
 To request more features/implementations, please create an issue or add an idea in the discussions on the repo. :)
 <br>
