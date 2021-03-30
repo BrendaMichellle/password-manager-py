@@ -51,7 +51,7 @@
     <a href="https://github.com/SamDev98/password-manager-py/tree/dev#current-implementations-available"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/SamDev98/password-manager-py">View Demo</a>
+    <a href="https://github.com/SamDev98/password-manager-py/blob/main/docs/demo.md">View Demo</a>
     ·
     <a href="https://github.com/SamDev98/password-manager-py/issues/new/choose">Report Bug</a>
     ·
