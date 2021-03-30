@@ -1,5 +1,12 @@
-# Demo GIFs for the projects:
+# Demo of the projects:
 
-## The Tui-based mongo driven password manager:
+<details>
+<summary>Choose a project!</summary>
 
-![](res/gifs/tui-mongo.gif)
+[Tui-Mongo](#tui-mongo)
+
+</details>
+
+## TUI-MONGO:
+### The Tui-based mongo driven password manager
+![TUI demo gif](res/gifs/tui-mongo.gif)
