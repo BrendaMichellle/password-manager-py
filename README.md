@@ -1,4 +1,4 @@
-<p>
+<p align="center">
 <br>
     <a href="" alt="License">
         <img src="https://img.shields.io/github/license/SamDev98/password-manager-py?style=for-the-badge"/>
