@@ -1,4 +1,4 @@
-<p>
+<p align="center">
 <br>
     <a href="" alt="License">
         <img src="https://img.shields.io/github/license/SamDev98/password-manager-py?style=for-the-badge"/>
@@ -9,21 +9,32 @@
     <a href="" alt="Maintained">
         <img src="https://img.shields.io/maintenance/yes/2021?style=for-the-badge"/>
     </a>
-    <a href="" alt="Contributors">
-        <img src="https://img.shields.io/github/contributors/samdev98/password-manager-py.svg?style=for-the-badge"/>
-    </a>
-    <a href="https://discord.gg/7sSs4AC3ey" alt="Discord">
-        <img src="https://img.shields.io/discord/813065529639436328?style=for-the-badge"/>
-    </a>
-    <a href="https://www.linkedin.com/in/sambhavrakhe" alt="Linkedin">
-        <img src="https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555"/>
-    </a>
 <br>
     <a href="https://github.com/SamDev98/password-manager-py/network/members" alt="Forks">
         <img src="https://img.shields.io/github/forks/SamDev98/password-manager-py.svg?style=for-the-badge"/>
     </a>
     <a href="https://github.com/SamDev98/password-manager-py/stargazers" alt="Stars">
         <img src="https://img.shields.io/github/stars/SamDev98/password-manager-py.svg?style=for-the-badge"/>
+    </a>
+<br>
+    <a href="" alt="Contributors">
+        <img src="https://img.shields.io/github/contributors/samdev98/password-manager-py.svg?style=for-the-badge"/>
+    </a>
+    <a href="https://github.com/SamDev98/password-manager-py/labels/good%20first%20issue" alt="Good First Issues">
+        <img src="https://img.shields.io/github/issues-raw/SamDev98/password-manager-py/good%20first%20issue?style=for-the-badge"/>
+    </a>
+    <a href="" alt="Code Size">
+        <img src="https://img.shields.io/github/languages/code-size/SamDev98/password-manager-py?style=for-the-badge"/>
+    </a>
+<br>
+    <a href="https://discord.gg/7sSs4AC3ey" alt="Discord">
+        <img src="https://img.shields.io/badge/CODEHUB-7289DA?style=for-the-badge&logo=discord&logoColor=white&colorB=555"/>
+    </a>
+    <a href="https://www.linkedin.com/in/sambhavrakhe" alt="Linkedin">
+        <img src="https://img.shields.io/badge/-Sambhav Rakhe-black.svg?style=for-the-badge&logo=linkedin&colorB=555"/>
+    </a>
+    <a href="https://www.twitter.com/samdev98" alt="Twitter">
+        <img src="https://img.shields.io/badge/SAMDEV98-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white&colorB=555"/>
     </a>
 <br>
     <a href="" alt="Build Status">
@@ -40,17 +51,17 @@
     </a>
 <br>
 </p>
-
+<hr>
 <p align="center">
     <a href="https://github.com/samdev98/password-manager-py">
         <img src="docs/res/images/PassManagerPy.png" alt="Logo" width="450" height="450">
     </a>
     <p align="center">
     An awesome open-sourced password manager!
-    <br />
+    <br>
     <a href="https://github.com/SamDev98/password-manager-py/tree/dev#current-implementations-available"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
+    <br>
+    <br>
     <a href="https://github.com/SamDev98/password-manager-py/blob/main/docs/demo.md">View Demo</a>
     ·
     <a href="https://github.com/SamDev98/password-manager-py/issues/new/choose">Report Bug</a>
