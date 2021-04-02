@@ -30,13 +30,12 @@ class DbHandler:
         if db_name in self.admin_mongo_client.list_database_names():
             # If db already exists, a new user cannot be created.
             return False
-        else:
-            # Else create the db (init it) and add the user with permissions to it.
-            pass_db = self.admin_mongo_client[db_name]
-            pass_col = pass_db['passwords']
-            pass_col.insert_one({'init': 'This is to init the db!'})
-            self.admin_mongo_client[db_name].add_user(user, password, roles=[{'role': 'readWrite', 'db': db_name}])
-            return True
+        # Else create the db (init it) and add the user with permissions to it.
+        pass_db = self.admin_mongo_client[db_name]
+        pass_col = pass_db['passwords']
+        pass_col.insert_one({'init': 'This is to init the db!'})
+        self.admin_mongo_client[db_name].add_user(user, password, roles=[{'role': 'readWrite', 'db': db_name}])
+        return True
 
     @_spinner
     def login(self, user='', password='', db_name=''):
@@ -94,7 +93,7 @@ class DbHandler:
                     except KeyError:
                         continue
                     else:
-                        if not tags.find(tag.lower()) == -1:
+                        if tags.find(tag.lower()) != -1:
                             return_list.append(password_data)
             return len(return_list), return_list
 

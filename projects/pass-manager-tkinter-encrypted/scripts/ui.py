@@ -113,11 +113,11 @@ class UI:
         intruct_label.grid(row=0, column=0)
         count, user_list, pass_list = self.data_manager_obj.get_all_passwords(tag_choice)
         self.user_listbox = Listbox(master=list_pass_window, height=count)
-        for i in range(0, count):
+        for i in range(count):
             self.user_listbox.insert(i, user_list[i])
         self.user_listbox.grid(row=1, column=0)
         self.pass_listbox = Listbox(master=list_pass_window, height=count)
-        for i in range(0, count):
+        for i in range(count):
             self.pass_listbox.insert(i, pass_list[i])
         self.pass_listbox.grid(row=1, column=1)
         self.user_listbox.bind("<<ListboxSelect>>", self.user_listbox_used)

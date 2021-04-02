@@ -34,9 +34,7 @@ class DataManager:
     def get_saved_password_tags(self):
         passwords_data = self.setup_obj.get_data_from_file(filename='passwords.csv')
         password_data = pandas.read_csv(io.StringIO(passwords_data))
-        tag_list = []
-        for tags in password_data.tag:
-            tag_list.append(str(tags).title())
+        tag_list = [str(tags).title() for tags in password_data.tag]
         tag_list = list(set(tag_list))
         return tag_list
 

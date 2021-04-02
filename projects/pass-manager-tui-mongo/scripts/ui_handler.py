@@ -43,7 +43,7 @@ class UiHandler:
         menu.add_row('7.', 'Intelli Dashboard')
         menu.add_row('8.', 'Import Passwords')
         menu.add_row('9.', 'Export Passwords')
-        choices = [str(x) for x in range(0, 10)]
+        choices = [str(x) for x in range(10)]
         choices.append('clear')
         choices.append('exit')
 
@@ -126,7 +126,7 @@ class UiHandler:
         row_count = 0
         usernames_list = []
         passwords_list = []
-        for i in range(0, length):
+        for i in range(length):
             password_data = pass_list[i]
             try:
                 website = password_data['website']
@@ -143,9 +143,12 @@ class UiHandler:
                 result_table.add_row(str(row_count), website, username, password, tags, date)
         self.print(result_table)
         if choosing:
-            choose = Prompt.ask('Enter a number to copy the password data: {ENTER to skip}\n\n',
-                                choices=[str(x) for x in range(0, row_count + 1)],
-                                default='0')
+            choose = Prompt.ask(
+                'Enter a number to copy the password data: {ENTER to skip}\n\n',
+                choices=[str(x) for x in range(row_count + 1)],
+                default='0',
+            )
+
             choose = int(choose)
             if choose > 0:
                 pyperclip.copy(usernames_list[choose - 1])
@@ -222,24 +225,23 @@ class UiHandler:
                                         default='exit')
             if pass_to_update == 'exit':
                 return
+            pass_to_update = int(pass_to_update)
+            pass_to_update -= 1
+            website = Prompt.ask("Enter the website", default=all_passwords[pass_to_update]['website'])
+            username = Prompt.ask("Enter your username", default=all_passwords[pass_to_update]['username'])
+            password = Prompt.ask("Enter your password", default=all_passwords[pass_to_update]['password'])
+            tags = Prompt.ask("Enter the tags (separate with spaces if multiple)",
+                              default=' '.join(all_passwords[pass_to_update]['tags']))
+            tags = tags.split(' ')
+            tags_lowered = [tag.lower() for tag in tags]
+            done = self.db_obj.update_password(db_name=self.db_name, _id=ids_list[pass_to_update], website=website,
+                                               username=username,
+                                               password=password,
+                                               tags=tags_lowered)
+            if not done:
+                self.print('Failed to update the password!', style="red on white")
             else:
-                pass_to_update = int(pass_to_update)
-                pass_to_update -= 1
-                website = Prompt.ask("Enter the website", default=all_passwords[pass_to_update]['website'])
-                username = Prompt.ask("Enter your username", default=all_passwords[pass_to_update]['username'])
-                password = Prompt.ask("Enter your password", default=all_passwords[pass_to_update]['password'])
-                tags = Prompt.ask("Enter the tags (separate with spaces if multiple)",
-                                  default=' '.join(all_passwords[pass_to_update]['tags']))
-                tags = tags.split(' ')
-                tags_lowered = [tag.lower() for tag in tags]
-                done = self.db_obj.update_password(db_name=self.db_name, _id=ids_list[pass_to_update], website=website,
-                                                   username=username,
-                                                   password=password,
-                                                   tags=tags_lowered)
-                if not done:
-                    self.print('Failed to update the password!', style="red on white")
-                else:
-                    self.print('Done!', style="green on white")
+                self.print('Done!', style="green on white")
         else:
             self.print('Nothing to show!!', style="red on white")
 
@@ -252,9 +254,7 @@ class UiHandler:
             tags = None
         len_passwords, all_passwords = self.db_obj.get_passwords(db_name=self.db_name, search_tags=tags)
         if len_passwords > 0:
-            ids_list = []
-            for password in all_passwords:
-                ids_list.append(password['_id'])
+            ids_list = [password['_id'] for password in all_passwords]
             self.display_passwords(len_passwords, all_passwords, choosing=False)
             choices = [str(x) for x in range(1, len(ids_list) + 1)]
             choices.append('exit')
@@ -264,8 +264,8 @@ class UiHandler:
                                         default='exit')
             if pass_to_delete == 'all':
                 flagged = False
-                for i in range(0, len(ids_list)):
-                    done = self.db_obj.delete_password(db_name=self.db_name, _id=ids_list[i])
+                for ids in ids_list:
+                    done = self.db_obj.delete_password(db_name=self.db_name, _id=ids)
                     if not done:
                         self.print('Failed to delete a password!', style="red on white")
                         flagged = True

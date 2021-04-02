@@ -22,7 +22,7 @@ class PasswordGenerator:
             my_list.append('LETTERS')
         if has_numbers:
             my_list.append('NUMBERS')
-        for i in range(0, pass_length):
+        for _ in range(pass_length):
             which_char = random.choice(my_list)
             that_list = ALL_CHARS[which_char]
             char_to_add = random.choice(that_list)
