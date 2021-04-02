@@ -19,7 +19,7 @@
     <a href="https://github.com/SamDev98/password-manager-py/stargazers" alt="Stars">
         <img src="https://img.shields.io/github/stars/SamDev98/password-manager-py.svg?style=for-the-badge"/>
     </a>
-    <a href="https://github.com/SamDev98/password-manager-py/stargazers" alt="Stars">
+    <a href="" alt="Code Size">
         <img src="https://img.shields.io/github/languages/code-size/SamDev98/password-manager-py?style=for-the-badge"/>
     </a>
 <br>
