@@ -10,14 +10,18 @@
         <img src="https://img.shields.io/maintenance/yes/2021?style=for-the-badge"/>
     </a>
 <br>
-    <a href="" alt="Contributors">
-        <img src="https://img.shields.io/github/contributors/samdev98/password-manager-py.svg?style=for-the-badge"/>
-    </a>
     <a href="https://github.com/SamDev98/password-manager-py/network/members" alt="Forks">
         <img src="https://img.shields.io/github/forks/SamDev98/password-manager-py.svg?style=for-the-badge"/>
     </a>
     <a href="https://github.com/SamDev98/password-manager-py/stargazers" alt="Stars">
         <img src="https://img.shields.io/github/stars/SamDev98/password-manager-py.svg?style=for-the-badge"/>
+    </a>
+<br>
+    <a href="" alt="Contributors">
+        <img src="https://img.shields.io/github/contributors/samdev98/password-manager-py.svg?style=for-the-badge"/>
+    </a>
+    <a href="https://github.com/SamDev98/password-manager-py/labels/good%20first%20issue" alt="Good First Issues">
+        <img src="https://img.shields.io/github/issues-raw/SamDev98/password-manager-py/good%20first%20issue?style=for-the-badge"/>
     </a>
     <a href="" alt="Code Size">
         <img src="https://img.shields.io/github/languages/code-size/SamDev98/password-manager-py?style=for-the-badge"/>
@@ -54,10 +58,10 @@
     </a>
     <p align="center">
     An awesome open-sourced password manager!
-    <br />
+    <br>
     <a href="https://github.com/SamDev98/password-manager-py/tree/dev#current-implementations-available"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
+    <br>
+    <br>
     <a href="https://github.com/SamDev98/password-manager-py/blob/main/docs/demo.md">View Demo</a>
     ·
     <a href="https://github.com/SamDev98/password-manager-py/issues/new/choose">Report Bug</a>
