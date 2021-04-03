@@ -1,30 +1,29 @@
 <p align="center">
 <br>
     <a href="" alt="License">
-        <img src="https://img.shields.io/github/license/SamDev98/password-manager-py?style=for-the-badge"/>
+        <img src="https://img.shields.io/github/license/SamDev98/password-manager-py"/>
     </a>
     <a href="https://github.com/SamDev98/password-manager-py/releases" alt="Releases">
-        <img src="https://img.shields.io/github/v/release/SamDev98/password-manager-py?include_prereleases&style=for-the-badge"/>
+        <img src="https://img.shields.io/github/v/release/SamDev98/password-manager-py?include_prereleases&"/>
     </a>
     <a href="" alt="Maintained">
-        <img src="https://img.shields.io/maintenance/yes/2021?style=for-the-badge"/>
+        <img src="https://img.shields.io/maintenance/yes/2021"/>
+    </a>
+    <a href="" alt="Code Size">
+        <img src="https://img.shields.io/github/languages/code-size/SamDev98/password-manager-py"/>
     </a>
 <br>
     <a href="https://github.com/SamDev98/password-manager-py/network/members" alt="Forks">
-        <img src="https://img.shields.io/github/forks/SamDev98/password-manager-py.svg?style=for-the-badge"/>
+        <img src="https://img.shields.io/github/forks/SamDev98/password-manager-py.svg"/>
     </a>
     <a href="https://github.com/SamDev98/password-manager-py/stargazers" alt="Stars">
-        <img src="https://img.shields.io/github/stars/SamDev98/password-manager-py.svg?style=for-the-badge"/>
+        <img src="https://img.shields.io/github/stars/SamDev98/password-manager-py.svg"/>
     </a>
-<br>
     <a href="" alt="Contributors">
-        <img src="https://img.shields.io/github/contributors/samdev98/password-manager-py.svg?style=for-the-badge"/>
+        <img src="https://img.shields.io/github/contributors/samdev98/password-manager-py.svg"/>
     </a>
     <a href="https://github.com/SamDev98/password-manager-py/labels/good%20first%20issue" alt="Good First Issues">
-        <img src="https://img.shields.io/github/issues-raw/SamDev98/password-manager-py/good%20first%20issue?style=for-the-badge"/>
-    </a>
-    <a href="" alt="Code Size">
-        <img src="https://img.shields.io/github/languages/code-size/SamDev98/password-manager-py?style=for-the-badge"/>
+        <img src="https://img.shields.io/github/issues-raw/SamDev98/password-manager-py/good%20first%20issue"/>
     </a>
 <br>
     <a href="https://discord.gg/7sSs4AC3ey" alt="Discord">

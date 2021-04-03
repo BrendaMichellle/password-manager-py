@@ -11,10 +11,10 @@ Please note we have a [code of conduct](CODE_OF_CONDUCT.md), please follow it in
 2. Checkout the dev branch and pull the dev code. 
       `git checkout dev`
       `git pull origin dev`
-4. Create your Feature Branch `git checkout -b feature/AmazingFeature`
+4. Create your Feature Branch `git checkout -b feature`
 5. Commit your Changes `git commit -m 'Add some AmazingFeature'`
-6. Push to the Branch `git push origin feature/AmazingFeature`
-7. Open a Pull Request
+6. Push to the Branch `git push origin feature`
+7. Open a Pull Request, make sure it points to `samdev98:dev` and **not** `samdev98:main`
 
 ### Notes:
 1. Please make sure you point your changes to the `dev` branch only. The changes will be tested and eventually be pushed
