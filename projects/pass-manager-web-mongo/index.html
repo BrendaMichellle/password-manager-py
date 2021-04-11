@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Manager</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar hide">
+    <i class="fas fa-chevron-left close-btn"></i>
+    <header class="navbar-header">
+      <div class="logo"><i class="fas fa-lock navbar-item-logo"></i>Password Py</div>
+    </header>
+    <ul class="navbar-items">
+      <li class="navbar-item"><i class="fas fa-columns navbar-item-logo"></i>Dashboard</li>
+      <li class="navbar-item"><i class="fas fa-key navbar-item-logo"></i>My Passwords</li>
+      <li class="navbar-item"><i class="fas fa-cog navbar-item-logo"></i>Settings</li>
+    </ul>
+    <button class="password-create-btn">Create Password<br><i class="fas fa-plus-circle"></i></button>
+  </nav>
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      <button class="nav-btn"><i class="fas fa-bars"></i></button>
+      <button class="nav-btn"><i class="fas fa-search"></i></button>
+    </div>
+  <section class="passwords-section">
+    <h3 class="password-categories-title">Categories</h3>
+    <div class="passwords-categories">
+      <button class="password-category active"><a href="" class="active"> Socials</a></button>
+      <button class="password-category middle-category"><a href=""> Browser</a></button>
+      <button class="password-category"><a href="">Payment</a></button>
+    </div>
+    <h3 class="passwords-container-title">Passwords</h3>
+    <div class="passwords">
+      <div class="password-container">
+        <img src="images/google.png" alt="google logo" class="password-logo">
+        <p class="password-title">Google<br><span class="password-url">www.google.com</span></p>
+        <div class="password-btns">
+          <button class="password-edit-btn"><i class="far fa-edit"></i></button>
+          <button class="password-delete-btn"><i class="far fa-trash-alt"></i></button>
+        </div>
+      </div>
+      <div class="password-container">
+        <img src="images/facebook.png" alt="facebook logo" class="password-logo">
+        <p class="password-title">Facebook<br><span class="password-url">www.facebook.com</span></p>
+        <div class="password-btns">
+          <button class="password-edit-btn"><i class="far fa-edit"></i></button>
+          <button class="password-delete-btn"><i class="far fa-trash-alt"></i></button>
+        </div>
+      </div>
+      <div class="password-container">
+        <img src="images/twitter.png" alt="twitter logo" class="password-logo">
+        <p class="password-title">Twitter<br><span class="password-url">www.twitter.com</span></p>
+        <div class="password-btns">
+          <button class="password-edit-btn"><i class="far fa-edit"></i></button>
+          <button class="password-delete-btn"><i class="far fa-trash-alt"></i></button>
+        </div>
+      </div>
+      <div class="password-container">
+        <img src="images/instagram.png" alt="twitter logo" class="password-logo">
+        <p class="password-title">Instagram<br><span class="password-url">www.instagram.com</span></p>
+        <div class="password-btns">
+          <button class="password-edit-btn"><i class="far fa-edit"></i></button>
+          <button class="password-delete-btn"><i class="far fa-trash-alt"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+  <script src="app.js"></script>
+</body>
+</html>

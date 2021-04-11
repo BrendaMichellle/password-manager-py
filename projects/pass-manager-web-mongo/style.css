@@ -1,0 +1,284 @@
+/*
+font-family: 'Noto Sans SC', sans-serif;
+Weights: 100-900
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /*font-family*/
+  --ff-primary: 'Noto Sans SC', sans-serif;
+  /*--ff-secondary: ;*/
+  /*colors*/
+  --clr-light: #ffffff;
+  --clr-dark: #303030;
+  --clr-background: #f4effa;
+  --clr-background2: #fcfafd;
+  --clr-background3: #ffffff;
+  --clr-accent: #4351ee;
+  /*font-size*/
+  --fs-h1: 2rem;
+  --fs-h2: 1.8rem;
+  --fs-h3: 1.4rem;
+  --fs-h4: 1.2rem;
+  --fs-body: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--clr-background);
+  font-size: 14px;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+
+button {
+  border: none;
+  font-size: var(--fs-h4);
+  background-color: var(--clr-light);
+  color: var(--clr-dark);
+}
+
+.active {
+  background-color: var(--clr-accent);
+  color: var(--clr-light);
+}
+/*------MOBILE DESIGN -----*/
+/* ... NAV ... */
+.navbar {
+  background-color: var(--clr-background);
+  color: #303030;
+  font-size: var(--fs-h4);
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+  width: 55vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  filter: drop-shadow(14px 4px 20px rgba(105, 105, 105, 0.6));
+}
+
+.hide {
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  margin: 10px;
+}
+
+.navbar-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: absolute;
+  top: 80px;
+}
+
+.logo {
+  font-weight: 500;
+}
+
+.fa-lock {
+  color: var(--clr-accent);
+}
+
+.navbar-items {
+  position: absolute;
+  top: 30vh;
+}
+
+.navbar-item {
+  list-style: none;
+  padding: 10px;
+}
+
+.navbar-item-logo {
+  padding-right: 10px;
+}
+
+.password-create-btn {
+  position: absolute;
+  top: 80vh;
+  padding: 8px 12px;
+  border-radius: 6px;
+  filter: drop-shadow(2px 2px 4px rgba(163, 163, 163, 0.6));
+}
+
+.fa-plus-circle {
+  margin: 5px;
+}
+
+/* ... HEADER ... */
+
+/* ... DASHBOARD HEADER ... */
+
+.dashboard-container {
+  display: inline;
+}
+
+.dashboard-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: unset;
+  margin: 10px;
+}
+
+.nav-btn {
+  margin: 5px;
+  background-color: transparent;
+}
+
+/* ... PASSWORD SECTION ... */
+
+.password-categories-title,
+.passwords-container-title {
+  font-weight: 500;
+  font-size: var(--fs-h4);
+  margin: 5px;
+}
+
+.passwords-categories {
+  width: 96vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 10px;
+  position: absolute;
+  left: 2vw;
+  top: 12vh;
+  margin-top: 10px;
+  background-color: var(--clr-background2);
+  border-radius: 6px;
+  filter: drop-shadow(2px 2px 4px rgba(163, 163, 163, 0.6));
+  opacity: 0.6;
+}
+
+.password-category {
+  font-size: var(--fs-body);
+  font-weight: 400;
+  padding: 12px 18px;
+  border-radius: 4px;
+  filter: drop-shadow(2px 2px 6px #a3a3a3);
+  opacity: 1;
+}
+
+.middle-category {
+  margin: 0 12px;
+}
+
+.passwords-section {
+  height: 80vh;
+  width: 100vw;
+}
+
+.passwords {
+  width: 96vw;
+  position: absolute;
+  top: 34vh;
+  left: 2vw;
+  background-color: var(--clr-background2);
+  border-radius: 6px;
+  filter: drop-shadow(2px 2px 4px rgba(163, 163, 163, 0.6));
+  opacity: 0.8;
+}
+
+.passwords-container-title {
+  position: absolute;
+  top: 26vh;
+}
+
+.password-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-body);
+  font-weight: 400;
+  padding: 15px 8px 15px 8px;
+  border-bottom: 1px solid rgba(163, 163, 163, 0.6);
+}
+
+.password-container:last-child {
+  border-bottom: none;
+}
+
+.password-logo {
+  height: 40px;
+  width: 40px;
+}
+
+.password-title {
+  font-weight: 500;
+  position: absolute;
+  left: 60px;
+}
+
+.password-url {
+  font-weight: 300;
+  font-size: var(--fs-body);
+}
+
+.password-edit-btn,
+.password-delete-btn {
+  margin-right: 14px;
+  font-size: 1.2rem;
+  color: var(--clr-dark);
+}
+
+/*FOOTER*/
+
+/*------- DESKTOP STYLES -------*/
+@media (min-width: 600px) {
+  .nav-btn {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+    width: 25vw;
+  }
+  .passwords {
+    width: 66vw;
+    position: absolute;
+    top: 34vh;
+    left: 30vw;
+  }
+  .passwords-section {
+    width: 75vw;
+  }
+
+  .password-categories-title,
+  .passwords-container-title {
+    position: absolute;
+    left: 30vw;
+  } 
+
+  .passwords-categories {
+    width: 66vw;
+    display: flex;
+    position: absolute;
+    left: 30vw;
+    top: 12vh;
+}
